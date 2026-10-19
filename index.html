@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОТРЯД ХАНГЕЦУ (半月) — Под эгидой Первой Высшей Луны Кокушибо</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            950: '#050308',
+                            900: '#07050a',
+                            800: '#0f0814',
+                            700: '#180d21',
+                        },
+                        crimson: {
+                            700: '#8a0a1d',
+                            600: '#b80f28',
+                            500: '#e61938',
+                            400: '#ff3352',
+                        },
+                        amethyst: {
+                            900: '#240929',
+                            800: '#380f3e',
+                            700: '#4a154b',
+                            500: '#7b2cbf',
+                            400: '#9d4edd',
+                        },
+                        lunar: {
+                            300: '#ffefb',
+                            400: '#f9e5b4',
+                            500: '#f4d58d',
+                            600: '#d4af37',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Inter"', 'system-ui', 'sans-serif'],
+                        jp: ['"Noto Serif JP"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: #07050a;
+            --bg-panel: #0f0814;
+            --crimson: #e61938;
+            --crimson-dark: #b80f28;
+            --purple: #4a154b;
+            --purple-glow: #7b2cbf;
+            --lunar: #f4d58d;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #e8e2ef;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            selection-background-color: #b80f28;
+            selection-color: #f4d58d;
+        }
+
+        ::selection {
+            background: #b80f28;
+            color: #f4d58d;
+        }
+
+        /* Authentic Kokushibo Haori Kikkomon (Hexagonal Tortoise-shell) SVG Pattern */
+        .kikkomon-bg {
+            background-color: #07050a;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hex' fill='%234a154b' fill-opacity='0.16'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%237b2cbf' stroke-width='1' stroke-opacity='0.18'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23b80f28' stroke-width='0.6' stroke-opacity='0.14'/%3E%3Cpolygon points='28,7 50,19 50,46 28,59 6,46 6,19' fill='%2316091e' fill-opacity='0.35'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Transparent World Mode (Прозрачный Мир) Effect */
+        body.transparent-world {
+            --bg-deep: #040208;
+        }
+        body.transparent-world .tw-highlight {
+            box-shadow: 0 0 30px rgba(230, 25, 56, 0.35), inset 0 0 20px rgba(244, 213, 141, 0.15);
+            border-color: rgba(230, 25, 56, 0.65) !important;
+        }
+        body.transparent-world .tw-vein-grid {
+            opacity: 1;
+        }
+
+        .tw-vein-grid {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            background-image: radial-gradient(circle at 50% 50%, rgba(230, 25, 56, 0.12) 0%, transparent 70%),
+                              linear-gradient(to right, rgba(230, 25, 56, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(230, 25, 56, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+        }
+
+        /* Typography & Glows */
+        .title-serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+        .text-glow-lunar {
+            text-shadow: 0 0 18px rgba(244, 213, 141, 0.45), 0 0 40px rgba(184, 15, 40, 0.35);
+        }
+        .text-glow-crimson {
+            text-shadow: 0 0 15px rgba(230, 25, 56, 0.65), 0 0 35px rgba(184, 15, 40, 0.45);
+        }
+
+        /* Custom Ornate Borders */
+        .ornate-card {
+            background: linear-gradient(155deg, rgba(20, 10, 29, 0.92) 0%, rgba(9, 5, 14, 0.96) 100%);
+            border: 1px solid rgba(123, 44, 191, 0.28);
+            box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(244, 213, 141, 0.12);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ornate-card:hover {
+            border-color: rgba(244, 213, 141, 0.45);
+            box-shadow: 0 18px 45px -10px rgba(184, 15, 40, 0.28), 0 0 25px rgba(123, 44, 191, 0.2), inset 0 1px 0 0 rgba(244, 213, 141, 0.25);
+        }
+
+        /* Eye Glow & Blinking */
+        .kokushibo-eye {
+            filter: drop-shadow(0 0 10px rgba(230, 25, 56, 0.75)) drop-shadow(0 0 22px rgba(244, 213, 141, 0.35));
+            transition: filter 0.3s ease;
+        }
+        .kokushibo-eye:hover {
+            filter: drop-shadow(0 0 16px rgba(244, 213, 141, 0.9)) drop-shadow(0 0 30px rgba(230, 25, 56, 0.95));
+        }
+
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 0.65; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+        .animate-pulse-slow {
+            animation: pulseSlow 4.5s infinite ease-in-out;
+        }
+
+        @keyframes bladeAura {
+            0%, 100% { filter: drop-shadow(0 0 12px rgba(184, 15, 40, 0.5)) drop-shadow(0 0 25px rgba(123, 44, 191, 0.3)); }
+            50% { filter: drop-shadow(0 0 22px rgba(230, 25, 56, 0.85)) drop-shadow(0 0 42px rgba(244, 213, 141, 0.45)); }
+        }
+        .blade-svg-glow {
+            animation: bladeAura 3.5s infinite ease-in-out;
+        }
+
+        /* Second Form Awakening Transitions */
+        .blade-form-2-part {
+            opacity: 0;
+            transform: scale(0.75) translateX(-15px);
+            transform-origin: center left;
+            transition: all 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+        }
+        .form-2-active .blade-form-2-part {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+            pointer-events: auto;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07050a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #4a154b, #b80f28);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #7b2cbf, #e61938);
+        }
+
+        /* Screen Shake on Transformation */
+        @keyframes screenShake {
+            0%, 100% { transform: translate(0, 0); }
+            15% { transform: translate(-5px, -3px); }
+            30% { transform: translate(5px, 4px); }
+            45% { transform: translate(-4px, 3px); }
+            60% { transform: translate(4px, -4px); }
+            75% { transform: translate(-2px, 2px); }
+        }
+        .shake-active {
+            animation: screenShake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+    </style>
+</head>
+<body class="kikkomon-bg min-h-screen relative selection:bg-crimson-600 selection:text-lunar-500">
+
+    <!-- Global Transparent World Vein Grid Overlay -->
+    <div class="tw-vein-grid fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Global Ambient Floating Crescent Moons Canvas -->
+    <canvas id="ambientMoonCanvas" class="fixed inset-0 pointer-events-none z-0 w-full h-full"></canvas>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 backdrop-blur-xl bg-obsidian-900/85 border-b border-amethyst-700/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amethyst-800 via-obsidian-800 to-crimson-700 p-0.5 shadow-lg shadow-crimson-600/20 group-hover:shadow-lunar-500/30 transition-all">
+                    <div class="w-full h-full bg-obsidian-950 rounded-[10px] flex items-center justify-center relative overflow-hidden">
+                        <span class="font-jp text-lg font-black text-lunar-500 group-hover:scale-110 transition-transform">半月</span>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-crimson-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="title-serif text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-lunar-500 transition-colors">ХАНГЕЦУ</span>
+                        <span class="text-xs font-jp px-2 py-0.5 rounded bg-crimson-600/20 border border-crimson-500/40 text-lunar-400">上弦の壱</span>
+                    </div>
+                    <p class="text-[11px] uppercase tracking-[0.22em] text-purple-300/70">Отряд Первой Высшей Луны</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="#hero" class="px-3.5 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-lunar-500 hover:bg-amethyst-800/40 transition-all">Главная</a>
+                <a href="#lore" class="px-3.5 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-lunar-500 hover:bg-amethyst-800/40 transition-all">Кокушибо и Отряд</a>
+                <a href="#blade" class="px-3.5 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-lunar-500 hover:bg-amethyst-800/40 transition-all flex items-center gap-1.5">
+                    <span>Клинок Кёкокукамусари</span>
+                    <span id="navBladeBadge" class="text-[10px] px-1.5 py-0.5 rounded bg-amethyst-700 text-lunar-400 font-semibold">I ФОРМА</span>
+                </a>
+                <a href="#archive" class="px-3.5 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-lunar-500 hover:bg-amethyst-800/40 transition-all">Архив Дыхания (16 кат)</a>
+            </nav>
+
+            <!-- Action Controls: Transparent World & Sound Toggle -->
+            <div class="flex items-center gap-2.5">
+                <button id="twToggleBtn" onclick="toggleTransparentWorld()" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium border border-crimson-500/40 bg-gradient-to-r from-obsidian-800 to-amethyst-900/80 text-lunar-400 hover:border-lunar-500 hover:shadow-lg hover:shadow-crimson-600/25 transition-all flex items-center gap-2" title="Активировать зрение Первой Высшей Луны">
+                    <span class="w-2.5 h-2.5 rounded-full bg-crimson-500 animate-ping" id="twPing"></span>
+                    <span class="hidden sm:inline">Прозрачный Мир</span>
+                    <span class="font-jp text-xs opacity-80">透</span>
+                </button>
+
+                <button id="soundToggleBtn" onclick="toggleAudio()" class="p-2.5 rounded-xl border border-amethyst-700/60 bg-obsidian-800/90 text-gray-300 hover:text-lunar-500 hover:border-lunar-500/50 transition-all" title="Звуковой резонанс клинка">
+                    <svg id="soundIconOff" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                    </svg>
+                    <svg id="soundIconOn" class="w-4 h-4 hidden text-lunar-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         1. HERO SECTION (ГЛАВНЫЙ ЭКРАН)
+         ========================================== -->
+    <section id="hero" class="relative z-10 min-h-[90vh] flex flex-col justify-center items-center py-14 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-amethyst-700/40">
+        <!-- Decorative Background Kanji Watermarks -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-between px-6 sm:px-16 opacity-[0.04] select-none overflow-hidden">
+            <div class="font-jp text-[11rem] sm:text-[17rem] font-black leading-none text-lunar-500 writing-vertical">黒死牟</div>
+            <div class="font-jp text-[11rem] sm:text-[17rem] font-black leading-none text-crimson-500 writing-vertical">月の呼吸</div>
+        </div>
+
+        <!-- Central Radial Lunar & Crimson Aura -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[620px] h-[340px] sm:h-[620px] rounded-full bg-gradient-to-tr from-crimson-600/15 via-amethyst-500/15 to-lunar-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto w-full text-center relative z-10">
+            <!-- Top Calligraphic Badge -->
+            <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-obsidian-800/90 border border-lunar-500/30 mb-6 shadow-lg shadow-black/60">
+                <span class="font-jp text-xs sm:text-sm text-crimson-400 font-bold tracking-widest">上弦の壱 • 黒死牟</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-lunar-500"></span>
+                <span class="text-xs uppercase tracking-[0.2em] text-lunar-400/90">Высшая Луна Первого Ранга</span>
+            </div>
+
+            <!-- Interactive 6-Eyed Visage of Kokushibo -->
+            <div id="eyesContainer" class="relative mx-auto max-w-2xl my-2 sm:my-4 p-4 sm:p-6 rounded-3xl ornate-card tw-highlight overflow-hidden group cursor-crosshair">
+                <!-- Ambient Top & Bottom Demon Slayer Mark Flames SVG -->
+                <svg viewBox="0 0 600 260" class="w-full h-auto max-h-[250px] mx-auto select-none overflow-visible" id="kokushiboVisageSvg">
+                    <defs>
+                        <!-- Glowing Eye Sclera Gradient -->
+                        <radialGradient id="eyeSclera" cx="50%" cy="50%" r="55%">
+                            <stop offset="0%" stop-color="#e61938" />
+                            <stop offset="65%" stop-color="#9e081e" />
+                            <stop offset="100%" stop-color="#3d020b" />
+                        </radialGradient>
+                        <!-- Glowing Golden Iris Gradient -->
+                        <radialGradient id="eyeIris" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fff8dc" />
+                            <stop offset="45%" stop-color="#f4d58d" />
+                            <stop offset="85%" stop-color="#d49b27" />
+                            <stop offset="100%" stop-color="#8a111f" />
+                        </radialGradient>
+                        <!-- Demon Slayer Mark Flame Gradient -->
+                        <linearGradient id="markFlame" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#b80f28" stop-opacity="0.85" />
+                            <stop offset="50%" stop-color="#6b0918" stop-opacity="0.65" />
+                            <stop offset="100%" stop-color="#240929" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Silhouette Face Shadow & Flame Marks (Muzzle/Forehead) -->
+                    <path d="M220,10 Q255,48 242,88 Q265,52 282,25 Q290,65 300,90 Q310,65 318,25 Q335,52 358,88 Q345,48 380,10 Q335,35 300,5 Q265,35 220,10 Z" fill="url(#markFlame)" class="animate-pulse-slow" />
+                    <path d="M160,185 Q195,215 225,248 Q205,205 235,175 Q195,195 160,185 Z" fill="url(#markFlame)" />
+                    <path d="M440,185 Q405,215 375,248 Q395,205 365,175 Q405,195 440,185 Z" fill="url(#markFlame)" />
+
+                    <!-- Subtle Bridge of Nose & Brow Lines -->
+                    <path d="M286,70 L282,195 M314,70 L318,195" stroke="rgba(244,213,141,0.14)" stroke-width="1.5" fill="none" />
+
+                    <!-- ================= PAIR 1: UPPER EYES (ВЕРХНЯЯ ПАРА ГЛАЗ) ================= -->
+                    <!-- Upper Left Eye (Viewer's Left) -->
+                    <g class="kokushibo-eye" transform="translate(195, 62) rotate(14)">
+                        <path d="M-52,0 Q-20,-24 50,-4 Q15,22 -52,0 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.2" stroke-opacity="0.6" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="11.5" fill="url(#eyeIris)" />
+                            <ellipse cx="0" cy="-1" rx="3.2" ry="8.5" fill="#1a0206" />
+                            <circle cx="-3.5" cy="-4.5" r="2" fill="#ffffff" opacity="0.85" />
+                        </g>
+                    </g>
+                    <!-- Upper Right Eye (Viewer's Right) -->
+                    <g class="kokushibo-eye" transform="translate(405, 62) rotate(-14)">
+                        <path d="M-50,-4 Q20,-24 52,0 Q-15,22 -50,-4 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.2" stroke-opacity="0.6" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="11.5" fill="url(#eyeIris)" />
+                            <ellipse cx="0" cy="-1" rx="3.2" ry="8.5" fill="#1a0206" />
+                            <circle cx="-3.5" cy="-4.5" r="2" fill="#ffffff" opacity="0.85" />
+                        </g>
+                    </g>
+
+                    <!-- ================= PAIR 2: MIDDLE PRIMARY EYES WITH KANJI (СРЕДНЯЯ ПАРА С КАНДЗИ «上弦» и «壱») ================= -->
+                    <!-- Middle Left Eye (Viewer's Left - Kokushibo's Right Eye: 上弦) -->
+                    <g class="kokushibo-eye" transform="translate(175, 130) rotate(8)">
+                        <path d="M-68,2 Q-25,-30 64,-5 Q20,28 -68,2 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.8" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="16.5" fill="url(#eyeIris)" />
+                            <circle cx="0" cy="-1" r="13.5" fill="none" stroke="#8a0a1d" stroke-width="1.2" stroke-dasharray="3 2" />
+                            <text x="0" y="3.5" text-anchor="middle" fill="#120104" font-family="'Noto Serif JP', serif" font-weight="900" font-size="11.5" letter-spacing="-1">上弦</text>
+                            <circle cx="-5" cy="-6" r="2.3" fill="#ffffff" opacity="0.9" />
+                        </g>
+                    </g>
+                    <!-- Middle Right Eye (Viewer's Right - Kokushibo's Left Eye: 壱) -->
+                    <g class="kokushibo-eye" transform="translate(425, 130) rotate(-8)">
+                        <path d="M-64,-5 Q25,-30 68,2 Q-20,28 -64,-5 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.8" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="16.5" fill="url(#eyeIris)" />
+                            <circle cx="0" cy="-1" r="13.5" fill="none" stroke="#8a0a1d" stroke-width="1.2" stroke-dasharray="3 2" />
+                            <text x="0" y="4.5" text-anchor="middle" fill="#120104" font-family="'Noto Serif JP', serif" font-weight="900" font-size="14">壱</text>
+                            <circle cx="-5" cy="-6" r="2.3" fill="#ffffff" opacity="0.9" />
+                        </g>
+                    </g>
+
+                    <!-- ================= PAIR 3: LOWER EYES (НИЖНЯЯ ПАРА ГЛАЗ) ================= -->
+                    <!-- Lower Left Eye -->
+                    <g class="kokushibo-eye" transform="translate(205, 194) rotate(5)">
+                        <path d="M-48,2 Q-18,-20 46,-4 Q12,20 -48,2 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.2" stroke-opacity="0.6" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="10.5" fill="url(#eyeIris)" />
+                            <ellipse cx="0" cy="-1" rx="3" ry="7.5" fill="#1a0206" />
+                            <circle cx="-3" cy="-4" r="1.8" fill="#ffffff" opacity="0.85" />
+                        </g>
+                    </g>
+                    <!-- Lower Right Eye -->
+                    <g class="kokushibo-eye" transform="translate(395, 194) rotate(-5)">
+                        <path d="M-46,-4 Q18,-20 48,2 Q-12,20 -46,-4 Z" fill="url(#eyeSclera)" stroke="#f4d58d" stroke-width="1.2" stroke-opacity="0.6" />
+                        <g class="eye-pupil" data-base-x="0" data-base-y="0">
+                            <circle cx="0" cy="-1" r="10.5" fill="url(#eyeIris)" />
+                            <ellipse cx="0" cy="-1" rx="3" ry="7.5" fill="#1a0206" />
+                            <circle cx="-3" cy="-4" r="1.8" fill="#ffffff" opacity="0.85" />
+                        </g>
+                    </g>
+                </svg>
+
+                <div class="mt-2 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">
+                    <span class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-lunar-500"></span>
+                        Наведите курсор — шесть глаз отслеживают каждое движение
+                    </span>
+                    <span id="twStatusBadge" class="px-2.5 py-0.5 rounded-full bg-amethyst-800/80 border border-amethyst-500/40 text-lunar-400">
+                        Режим: Ночное созерцание
+                    </span>
+                </div>
+            </div>
+
+            <!-- Main Hero Heading -->
+            <h1 class="title-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mt-6 mb-4 text-glow-lunar">
+                ОТРЯД <span class="text-transparent bg-clip-text bg-gradient-to-r from-lunar-400 via-lunar-500 to-crimson-500">ХАНГЕЦУ</span>
+                <span class="font-jp text-2xl sm:text-4xl text-crimson-500 align-middle ml-2 font-normal">「半月」</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl text-gray-300 font-light leading-relaxed mb-8">
+                Под эгидой <span class="text-lunar-400 font-medium">Первой Высшей Луны — Кокушибо</span>. Обитель абсолютного фехтовального совершенства, безмолвной дисциплины и неотвратимого сияния шестнадцати кат Дыхания Луны.
+            </p>
+
+            <!-- Hero CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#blade" class="px-7 py-3.5 rounded-xl font-medium text-sm sm:text-base bg-gradient-to-r from-crimson-700 via-crimson-600 to-amethyst-700 text-lunar-400 border border-lunar-500/40 shadow-xl shadow-crimson-600/25 hover:shadow-crimson-500/45 hover:scale-[1.02] transition-all flex items-center gap-2.5">
+                    <span>Оружейная: Кёкокукамусари</span>
+                    <span class="font-jp text-xs opacity-80">虚哭神去</span>
+                </a>
+                <a href="#archive" class="px-7 py-3.5 rounded-xl font-medium text-sm sm:text-base bg-obsidian-800/90 text-gray-200 border border-amethyst-500/40 hover:border-lunar-500/60 hover:text-lunar-400 transition-all flex items-center gap-2.5">
+                    <span>Архив Дыхания Луны (16 стилей)</span>
+                    <span class="font-jp text-xs text-lunar-500">月の呼吸</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         2. LORE SECTION (КОКУШИБО И ОТРЯД ХАНГЕЦУ)
+         ========================================== -->
+    <section id="lore" class="relative z-10 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amethyst-900/60 border border-amethyst-500/30 text-lunar-400 text-xs uppercase tracking-widest mb-3">
+                <span>Философия и Величие</span>
+                <span class="font-jp">• 剣道の極致</span>
+            </div>
+            <h2 class="title-serif text-3xl sm:text-5xl font-bold text-white tracking-wide">
+                Владыка Ночного Небосвода и Его Клинок в Ночи
+            </h2>
+            <div class="w-28 h-0.5 bg-gradient-to-r from-transparent via-crimson-500 to-transparent mx-auto mt-4"></div>
+        </div>
+
+        <!-- Two-Column Asymmetric Architectural Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+            
+            <!-- Column 1: Kokushibo — Upper Rank One -->
+            <article class="ornate-card tw-highlight rounded-3xl p-7 sm:p-10 relative overflow-hidden flex flex-col justify-between">
+                <!-- Background Kanji Watermark -->
+                <div class="absolute -right-4 -bottom-6 font-jp text-9xl font-black text-crimson-500/[0.06] select-none pointer-events-none">
+                    黒死牟
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between gap-4 border-b border-amethyst-700/50 pb-5 mb-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-[0.2em] text-crimson-400 font-semibold block mb-1">Первая Высшая Луна</span>
+                            <h3 class="title-serif text-2xl sm:text-4xl font-bold text-lunar-400">Кокушибо</h3>
+                        </div>
+                        <div class="px-4 py-2 rounded-2xl bg-obsidian-950/90 border border-crimson-500/40 text-right">
+                            <div class="font-jp text-xl sm:text-2xl font-bold text-crimson-500">上弦の壱</div>
+                            <div class="text-[10px] uppercase tracking-widest text-gray-400">Вершина Иерархии</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
+                        <p>
+                            <strong class="text-lunar-400 font-semibold">Кокушибо</strong> — непоколебимый страж вершины боевого мастерства, сильнейший мечник среди демонов, чье существование подчинено единой великой цели: достижению абсолютного, недосягаемого идеала искусства владения мечом.
+                        </p>
+                        <p>
+                            На протяжении столетий он оттачивал каждую грань своего стиля, объединив древнюю технику фехтования с безграничными возможностями демонической природы. Его облачение с пурпурно-черным гексагональным узором <span class="text-lunar-400 italic">Киккомон</span> напоминает о самурайской чести, переплавленной в вечную ночь.
+                        </p>
+                        <p>
+                            Шесть глаз Первой Высшей Луны даруют ему доступ в <strong class="text-white">«Прозрачный Мир» (透き通る世界)</strong>. От его взора невозможно укрыться: он видит малейшие сокращения мышц, движение воздушных потоков и намерение противника еще до того, как зарождается сам удар.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Attributes Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8 pt-6 border-t border-amethyst-700/40">
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80">
+                        <div class="text-xs text-gray-400 mb-1">Восприятие</div>
+                        <div class="text-sm font-semibold text-lunar-400">Прозрачный Мир</div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80">
+                        <div class="text-xs text-gray-400 mb-1">Стиль боя</div>
+                        <div class="text-sm font-semibold text-crimson-400">Дыхание Луны</div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80 col-span-2 sm:col-span-1">
+                        <div class="text-xs text-gray-400 mb-1">Вооружение</div>
+                        <div class="text-sm font-semibold text-purple-300">Кёкокукамусари</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Column 2: Hangetsu Squad (Отряд Хангецу) -->
+            <article class="ornate-card tw-highlight rounded-3xl p-7 sm:p-10 relative overflow-hidden flex flex-col justify-between">
+                <!-- Background Kanji Watermark -->
+                <div class="absolute -right-4 -bottom-6 font-jp text-9xl font-black text-lunar-500/[0.06] select-none pointer-events-none">
+                    半月
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between gap-4 border-b border-amethyst-700/50 pb-5 mb-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-[0.2em] text-purple-400 font-semibold block mb-1">Элитное Подразделение</span>
+                            <h3 class="title-serif text-2xl sm:text-4xl font-bold text-white">Отряд «Хангецу»</h3>
+                        </div>
+                        <div class="px-4 py-2 rounded-2xl bg-obsidian-950/90 border border-lunar-500/40 text-right">
+                            <div class="font-jp text-xl sm:text-2xl font-bold text-lunar-500">半月</div>
+                            <div class="text-[10px] uppercase tracking-widest text-gray-400">Полумесяц Ночи</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
+                        <p>
+                            <strong class="text-lunar-400 font-semibold">Отряд «Хангецу» (半月 — Полумесяц)</strong> — воплощение воли и меча Первой Высшей Луны. Это не просто боевая единица, но живая доктрина безмолвного превосходства, действующая под покровом глубокой ночи.
+                        </p>
+                        <p>
+                            В основе философии отряда лежит суровая аскеза воинского духа: полное отсутствие лишних эмоций, безукоризненная выдержка и хладнокровный расчет. Подобно тому, как лунный серп рассекает ночную мглу без единого звука, «Хангецу» олицетворяет неотвратимость идеального взмаха.
+                        </p>
+                        <p>
+                            Назначение отряда — поддержание абсолютного порядка, пресечение хаоса и демонстрация высшего канона боевой геометрии, где каждый шаг и каждый взмах выверены до долей мгновения.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Four Philosophical Pillars of Hangetsu -->
+                <div class="grid grid-cols-2 gap-3 mt-8 pt-6 border-t border-amethyst-700/40">
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80 flex items-start gap-2.5">
+                        <span class="text-lunar-500 font-jp font-bold text-sm mt-0.5">壱</span>
+                        <div>
+                            <div class="text-xs font-semibold text-white">Холодная точность</div>
+                            <div class="text-[11px] text-gray-400">Ни одного лишнего движения</div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80 flex items-start gap-2.5">
+                        <span class="text-crimson-500 font-jp font-bold text-sm mt-0.5">弐</span>
+                        <div>
+                            <div class="text-xs font-semibold text-white">Абсолютный порядок</div>
+                            <div class="text-[11px] text-gray-400">Непоколебимая дисциплина</div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80 flex items-start gap-2.5">
+                        <span class="text-purple-400 font-jp font-bold text-sm mt-0.5">参</span>
+                        <div>
+                            <div class="text-xs font-semibold text-white">Совершенство формы</div>
+                            <div class="text-[11px] text-gray-400">Канон боевого искусства</div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-obsidian-950/75 border border-amethyst-800/80 flex items-start gap-2.5">
+                        <span class="text-lunar-400 font-jp font-bold text-sm mt-0.5">肆</span>
+                        <div>
+                            <div class="text-xs font-semibold text-white">Неотвратимость луны</div>
+                            <div class="text-[11px] text-gray-400">Безмолвный приговор ночи</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. INTERACTIVE ARMORY: КЛИНОК «КЁКОКУКАМУСАРИ» (虚哭神去)
+         ========================================== -->
+    <section id="blade" class="relative z-10 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 border-y border-amethyst-700/40 bg-obsidian-950/60">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-700/25 border border-crimson-500/40 text-lunar-400 text-xs uppercase tracking-widest mb-3">
+                        <span>Интерактивная Оружейная</span>
+                        <span class="font-jp">• 虚哭神去</span>
+                    </div>
+                    <h2 class="title-serif text-3xl sm:text-5xl font-bold text-white">
+                        Клинок из Плоти: <span class="text-lunar-500">«Кёкокукамусари»</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base mt-2 max-w-2xl">
+                        Живое продолжение тела Первой Высшей Луны, выкованное из его собственной плоти и костей. Переключайте форму клинка и испытывайте траекторию рассечения.
+                    </p>
+                </div>
+
+                <!-- Primary Modification & Slash Controls -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <button id="modifyBladeBtn" onclick="toggleBladeForm()" class="px-6 py-3.5 rounded-2xl font-semibold text-sm sm:text-base bg-gradient-to-r from-crimson-700 via-crimson-600 to-amethyst-700 text-lunar-400 border border-lunar-500/60 shadow-xl shadow-crimson-600/30 hover:shadow-crimson-500/50 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3">
+                        <span id="modifyBtnIcon" class="w-3 h-3 rounded-full bg-lunar-400 animate-pulse"></span>
+                        <span id="modifyBtnText">Модифицировать клинок: Вторая форма</span>
+                    </button>
+
+                    <button onclick="triggerBladeSlashTest()" class="px-5 py-3.5 rounded-2xl font-medium text-sm sm:text-base bg-obsidian-800 hover:bg-amethyst-900/80 text-white border border-amethyst-500/50 hover:border-lunar-500 transition-all flex items-center gap-2">
+                        <span>⚔️ Испытать взмах</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Blade Stage -->
+            <div id="bladeStageContainer" class="ornate-card tw-highlight rounded-3xl p-4 sm:p-8 relative overflow-hidden">
+                <!-- Background Canvas for Chaotic Crescent Moons & Slash Effects -->
+                <canvas id="bladeEffectCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+
+                <!-- Top Status Bar Inside Armory -->
+                <div class="relative z-20 flex flex-wrap items-center justify-between gap-4 pb-4 mb-4 border-b border-amethyst-800/70">
+                    <div class="flex items-center gap-3">
+                        <span id="bladeFormIndicator" class="px-3.5 py-1 rounded-lg bg-amethyst-800/90 border border-lunar-500/40 text-lunar-400 text-xs font-bold uppercase tracking-wider">
+                            I ФОРМА • Изначальная Катана
+                        </span>
+                        <span class="font-jp text-sm text-gray-400 hidden sm:inline" id="bladeJpSubtitle">標準形態 • 虚哭神去</span>
+                    </div>
+                    <div class="text-xs text-gray-400 flex items-center gap-2">
+                        <span class="inline-block w-2 h-2 rounded-full bg-crimson-500"></span>
+                        <span>Нажимайте на узлы клинка для изучения его анатомии</span>
+                    </div>
+                </div>
+
+                <!-- Interactive SVG Blade Viewport -->
+                <div class="relative z-20 py-6 sm:py-10 flex items-center justify-center min-h-[260px] sm:min-h-[340px] select-none">
+                    <svg id="kyokokukamusariSvg" viewBox="0 0 1100 340" class="w-full h-auto max-h-[340px] blade-svg-glow overflow-visible">
+                        <defs>
+                            <!-- Flesh & Obsidian Blade Body Gradient -->
+                            <linearGradient id="bladeFleshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#2c0720" />
+                                <stop offset="35%" stop-color="#590925" />
+                                <stop offset="75%" stop-color="#8c0d28" />
+                                <stop offset="100%" stop-color="#d91636" />
+                            </linearGradient>
+
+                            <!-- Razor Edge Hamon Gradient -->
+                            <linearGradient id="bladeEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#f4d58d" stop-opacity="0.7" />
+                                <stop offset="50%" stop-color="#ff3352" stop-opacity="0.95" />
+                                <stop offset="100%" stop-color="#fff6d6" stop-opacity="1" />
+                            </linearGradient>
+
+                            <!-- Organic Vein Pattern -->
+                            <linearGradient id="veinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f4d58d" stop-opacity="0.6" />
+                                <stop offset="50%" stop-color="#e61938" stop-opacity="0.9" />
+                                <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0.4" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- =====================================================
+                             SECOND FORM EXTENSIONS (ВЕТВЯЩИЕСЯ ОТРОСТКИ II ФОРМЫ)
+                             ===================================================== -->
+                        <g id="secondFormGroup" class="blade-form-2-part">
+                            <!-- Extended Long Tip (Удлиненное острие клинка) -->
+                            <path d="M 730,162 Q 910,155 1075,132 Q 1020,178 900,185 L 725,184 Z" fill="url(#bladeFleshGrad)" stroke="url(#bladeEdgeGrad)" stroke-width="2" />
+                            <path d="M 735,172 Q 900,166 1055,137" stroke="#f4d58d" stroke-width="1.2" stroke-opacity="0.65" fill="none" />
+
+                            <!-- Top Branch 1 (Верхний серповидный отросток 1) -->
+                            <path d="M 470,162 Q 535,105 645,52 Q 615,108 555,163 Z" fill="url(#bladeFleshGrad)" stroke="url(#bladeEdgeGrad)" stroke-width="1.8" />
+                            <path d="M 495,152 Q 555,112 628,62" stroke="#f4d58d" stroke-width="1" fill="none" opacity="0.6" />
+
+                            <!-- Top Branch 2 (Дальний верхний рог-клинок) -->
+                            <path d="M 670,161 Q 755,95 895,44 Q 845,110 755,162 Z" fill="url(#bladeFleshGrad)" stroke="url(#bladeEdgeGrad)" stroke-width="1.8" />
+                            <path d="M 695,152 Q 775,102 872,54" stroke="#f4d58d" stroke-width="1" fill="none" opacity="0.6" />
+
+                            <!-- Bottom Branch 3 (Нижний обратный серповидный клинок) -->
+                            <path d="M 565,185 Q 655,242 795,288 Q 735,228 655,184 Z" fill="url(#bladeFleshGrad)" stroke="url(#bladeEdgeGrad)" stroke-width="1.8" />
+                            <path d="M 590,192 Q 675,235 772,276" stroke="#f4d58d" stroke-width="1" fill="none" opacity="0.6" />
+
+                            <!-- Additional Living Eyes on Second Form Branches -->
+                            <!-- Eye on Top Branch 1 -->
+                            <g transform="translate(555, 118) rotate(-28)">
+                                <path d="M-16,0 Q0,-9 16,0 Q0,9 -16,0 Z" fill="#b80f28" stroke="#f4d58d" stroke-width="1" />
+                                <circle cx="0" cy="0" r="4.5" fill="#f4d58d" />
+                                <ellipse cx="0" cy="0" rx="1.5" ry="3.5" fill="#120104" />
+                            </g>
+                            <!-- Eye on Top Branch 2 -->
+                            <g transform="translate(768, 112) rotate(-25)">
+                                <path d="M-18,0 Q0,-10 18,0 Q0,10 -18,0 Z" fill="#b80f28" stroke="#f4d58d" stroke-width="1" />
+                                <circle cx="0" cy="0" r="5" fill="#f4d58d" />
+                                <ellipse cx="0" cy="0" rx="1.6" ry="4" fill="#120104" />
+                            </g>
+                            <!-- Eye on Bottom Branch 3 -->
+                            <g transform="translate(672, 226) rotate(24)">
+                                <path d="M-17,0 Q0,-9 17,0 Q0,9 -17,0 Z" fill="#b80f28" stroke="#f4d58d" stroke-width="1" />
+                                <circle cx="0" cy="0" r="4.5" fill="#f4d58d" />
+                                <ellipse cx="0" cy="0" rx="1.5" ry="3.5" fill="#120104" />
+                            </g>
+                            <!-- Eyes on Extended Main Tip -->
+                            <g transform="translate(835, 169) rotate(-4)">
+                                <path d="M-20,0 Q0,-11 20,0 Q0,11 -20,0 Z" fill="#b80f28" stroke="#f4d58d" stroke-width="1.1" />
+                                <circle cx="0" cy="0" r="5.5" fill="#f4d58d" />
+                                <ellipse cx="0" cy="0" rx="1.8" ry="4.2" fill="#120104" />
+                            </g>
+                            <g transform="translate(945, 158) rotate(-7)">
+                                <path d="M-16,0 Q0,-8 16,0 Q0,8 -16,0 Z" fill="#b80f28" stroke="#f4d58d" stroke-width="1" />
+                                <circle cx="0" cy="0" r="4.2" fill="#f4d58d" />
+                                <ellipse cx="0" cy="0" rx="1.4" ry="3.2" fill="#120104" />
+                            </g>
+
+                            <!-- Hotspot Node 4: Side Branches (Only visible in Form II) -->
+                            <g onclick="inspectBladePart(3)" class="cursor-pointer group">
+                                <circle cx="785" cy="95" r="14" fill="rgba(230,25,56,0.25)" stroke="#f4d58d" stroke-width="1.5" class="animate-ping" style="animation-duration: 2.5s;" />
+                                <circle cx="785" cy="95" r="10" fill="#b80f28" stroke="#f4d58d" stroke-width="1.5" />
+                                <text x="785" y="99" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">4</text>
+                            </g>
+                        </g>
+
+                        <!-- =====================================================
+                             FIRST FORM CORE BLADE & HILT (ОСНОВНОЙ КЛИНОК И РУКОЯТЬ)
+                             ===================================================== -->
+                        <g id="firstFormCoreGroup">
+                            <!-- Main Katana Blade Body (Полотно клинка) -->
+                            <path d="M 270,162 Q 520,162 795,144 Q 765,180 725,184 Q 515,188 270,186 Z" fill="url(#bladeFleshGrad)" stroke="#4a154b" stroke-width="1.5" />
+
+                            <!-- Glowing Crimson-Gold Cutting Edge (Линия хамона и режущая кромка) -->
+                            <path d="M 272,185 Q 515,187 725,183 Q 762,179 793,145" fill="none" stroke="url(#bladeEdgeGrad)" stroke-width="2.6" />
+
+                            <!-- Organic Flesh Veins Along the Blade -->
+                            <path d="M 285,172 Q 360,165 420,176 T 560,170 T 700,168" fill="none" stroke="url(#veinGrad)" stroke-width="1.5" opacity="0.8" />
+                            <path d="M 310,166 Q 410,179 495,167 T 665,175" fill="none" stroke="#e61938" stroke-width="1" opacity="0.65" />
+
+                            <!-- Living Eyes Embedded Along the Main Blade -->
+                            <!-- Blade Eye 1 (Near Habaki) -->
+                            <g class="blade-eye" transform="translate(335, 173)">
+                                <path d="M-22,0 Q0,-12 22,0 Q0,12 -22,0 Z" fill="#8a0a1d" stroke="#f4d58d" stroke-width="1.2" />
+                                <circle cx="0" cy="0" r="6" fill="url(#eyeIris)" class="blade-pupil" />
+                                <ellipse cx="0" cy="0" rx="1.8" ry="4.5" fill="#120104" class="blade-pupil" />
+                            </g>
+                            <!-- Blade Eye 2 -->
+                            <g class="blade-eye" transform="translate(435, 174)">
+                                <path d="M-19,0 Q0,-10 19,0 Q0,10 -19,0 Z" fill="#8a0a1d" stroke="#f4d58d" stroke-width="1.1" />
+                                <circle cx="0" cy="0" r="5.2" fill="url(#eyeIris)" class="blade-pupil" />
+                                <ellipse cx="0" cy="0" rx="1.6" ry="4" fill="#120104" class="blade-pupil" />
+                            </g>
+                            <!-- Blade Eye 3 (Center) -->
+                            <g class="blade-eye" transform="translate(535, 173)">
+                                <path d="M-24,0 Q0,-13 24,0 Q0,13 -24,0 Z" fill="#8a0a1d" stroke="#f4d58d" stroke-width="1.3" />
+                                <circle cx="0" cy="0" r="6.5" fill="url(#eyeIris)" class="blade-pupil" />
+                                <ellipse cx="0" cy="0" rx="2" ry="5" fill="#120104" class="blade-pupil" />
+                            </g>
+                            <!-- Blade Eye 4 -->
+                            <g class="blade-eye" transform="translate(635, 170) rotate(-2)">
+                                <path d="M-18,0 Q0,-10 18,0 Q0,10 -18,0 Z" fill="#8a0a1d" stroke="#f4d58d" stroke-width="1.1" />
+                                <circle cx="0" cy="0" r="5" fill="url(#eyeIris)" class="blade-pupil" />
+                                <ellipse cx="0" cy="0" rx="1.6" ry="3.8" fill="#120104" class="blade-pupil" />
+                            </g>
+                            <!-- Blade Eye 5 (Near Tip) -->
+                            <g class="blade-eye" transform="translate(720, 165) rotate(-5)">
+                                <path d="M-15,0 Q0,-8 15,0 Q0,8 -15,0 Z" fill="#8a0a1d" stroke="#f4d58d" stroke-width="1" />
+                                <circle cx="0" cy="0" r="4.2" fill="url(#eyeIris)" class="blade-pupil" />
+                                <ellipse cx="0" cy="0" rx="1.4" ry="3.2" fill="#120104" class="blade-pupil" />
+                            </g>
+
+                            <!-- Habaki (Collar) & Ornate Demonic Tsuba (Guard) -->
+                            <rect x="246" y="159" width="26" height="30" rx="3" fill="#240929" stroke="#f4d58d" stroke-width="1.5" />
+                            <ellipse cx="242" cy="174" rx="11" ry="38" fill="#18061e" stroke="#f4d58d" stroke-width="2" />
+                            <ellipse cx="242" cy="174" rx="6" ry="26" fill="#8a0a1d" stroke="#e61938" stroke-width="1" />
+
+                            <!-- Tsuka (Hilt with Hexagonal Wrapping & Eyes) -->
+                            <rect x="48" y="160" width="190" height="28" rx="6" fill="#14071a" stroke="#7b2cbf" stroke-width="1.8" />
+                            <!-- Tsuka Ito Diamond Pattern -->
+                            <path d="M60,160 L80,188 L100,160 L120,188 L140,160 L160,188 L180,160 L200,188 L220,160" fill="none" stroke="#4a154b" stroke-width="3" />
+                            <path d="M60,188 L80,160 L100,188 L120,160 L140,188 L160,160 L180,188 L200,160 L220,188" fill="none" stroke="#7b2cbf" stroke-width="2" />
+                            <!-- Eyes on Hilt -->
+                            <circle cx="90" cy="174" r="5" fill="#e61938" stroke="#f4d58d" stroke-width="1" />
+                            <circle cx="90" cy="174" r="1.8" fill="#120104" />
+                            <circle cx="150" cy="174" r="5.5" fill="#e61938" stroke="#f4d58d" stroke-width="1" />
+                            <circle cx="150" cy="174" r="2" fill="#120104" />
+                            <circle cx="210" cy="174" r="5" fill="#e61938" stroke="#f4d58d" stroke-width="1" />
+                            <circle cx="210" cy="174" r="1.8" fill="#120104" />
+                            <!-- Kashira (Pommel) -->
+                            <path d="M48,159 L35,165 L35,183 L48,189 Z" fill="#f4d58d" />
+
+                            <!-- Interactive Inspection Hotspots (Nodes 1, 2, 3) -->
+                            <g onclick="inspectBladePart(0)" class="cursor-pointer">
+                                <circle cx="150" cy="142" r="10" fill="#4a154b" stroke="#f4d58d" stroke-width="1.5" />
+                                <text x="150" y="146" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">1</text>
+                            </g>
+                            <g onclick="inspectBladePart(1)" class="cursor-pointer">
+                                <circle cx="385" cy="142" r="10" fill="#4a154b" stroke="#f4d58d" stroke-width="1.5" />
+                                <text x="385" y="146" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">2</text>
+                            </g>
+                            <g onclick="inspectBladePart(2)" class="cursor-pointer">
+                                <circle cx="535" cy="208" r="10" fill="#4a154b" stroke="#f4d58d" stroke-width="1.5" />
+                                <text x="535" y="212" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">3</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Bottom Info Panel: Active Hotspot Details + Dynamic Combat Metrics -->
+                <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6 border-t border-amethyst-800/70">
+                    <!-- Left 5 Cols: Selected Anatomy Node Details -->
+                    <div class="lg:col-span-5 p-5 rounded-2xl bg-obsidian-950/85 border border-amethyst-700/50 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span id="nodeBadge" class="text-xs font-semibold uppercase tracking-wider text-lunar-500">Узел #1 • Анатомия клинка</span>
+                                <span class="font-jp text-xs text-crimson-400">肉体の刃</span>
+                            </div>
+                            <h4 id="nodeTitle" class="title-serif text-xl sm:text-2xl font-bold text-white mb-2">
+                                Рукоять и гарда «Кёкокукамусари»
+                            </h4>
+                            <p id="nodeDesc" class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                                Рукоять оплетена в геометрическом стиле хаори Кокушибо и снабжена живыми глазами, сливающимися с ладонями мечника. Это обеспечивает мгновенную передачу импульса без малейшей задержки.
+                            </p>
+                        </div>
+
+                        <div class="flex items-center gap-2 mt-4 pt-3 border-t border-amethyst-900">
+                            <button onclick="inspectBladePart(0)" class="px-2.5 py-1 rounded text-xs bg-amethyst-800/60 hover:bg-amethyst-700 text-gray-200 transition-colors">1. Рукоять</button>
+                            <button onclick="inspectBladePart(1)" class="px-2.5 py-1 rounded text-xs bg-amethyst-800/60 hover:bg-amethyst-700 text-gray-200 transition-colors">2. Плоть и кость</button>
+                            <button onclick="inspectBladePart(2)" class="px-2.5 py-1 rounded text-xs bg-amethyst-800/60 hover:bg-amethyst-700 text-gray-200 transition-colors">3. Зрячие глаза</button>
+                            <button onclick="inspectBladePart(3)" class="px-2.5 py-1 rounded text-xs bg-crimson-700/50 hover:bg-crimson-600 text-lunar-400 transition-colors">4. Отростки II формы</button>
+                        </div>
+                    </div>
+
+                    <!-- Right 7 Cols: Dynamic Performance Parameters -->
+                    <div class="lg:col-span-7 p-5 rounded-2xl bg-obsidian-950/85 border border-amethyst-700/50">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-300">Боевые показатели текущей конфигурации</span>
+                            <span id="bladeKataAccessBadge" class="text-xs px-2.5 py-0.5 rounded bg-amethyst-800 text-lunar-400">Доступны I–VI каты</span>
+                        </div>
+
+                        <div class="space-y-3.5">
+                            <!-- Stat 1 -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-300">Дистанция и радиус поражения</span>
+                                    <span id="statRangeLabel" class="text-lunar-400 font-semibold">Высокая (Средняя и дальняя)</span>
+                                </div>
+                                <div class="w-full h-2 rounded-full bg-obsidian-800 overflow-hidden">
+                                    <div id="statRangeBar" class="h-full bg-gradient-to-r from-amethyst-500 to-lunar-500 transition-all duration-700" style="width: 72%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat 2 -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-300">Плотность роя лунных полумесяцев</span>
+                                    <span id="statCrescentLabel" class="text-crimson-400 font-semibold">Концентрированная дуга</span>
+                                </div>
+                                <div class="w-full h-2 rounded-full bg-obsidian-800 overflow-hidden">
+                                    <div id="statCrescentBar" class="h-full bg-gradient-to-r from-crimson-700 to-crimson-400 transition-all duration-700" style="width: 76%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat 3 -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-300">Непредсказуемость траектории</span>
+                                    <span id="statChaosLabel" class="text-purple-300 font-semibold">Идеальная геометрия</span>
+                                </div>
+                                <div class="w-full h-2 rounded-full bg-obsidian-800 overflow-hidden">
+                                    <div id="statChaosBar" class="h-full bg-gradient-to-r from-amethyst-700 via-crimson-500 to-lunar-400 transition-all duration-700" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <!-- Stat 4 -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-300">Мгновенная регенерация полотна</span>
+                                    <span class="text-lunar-500 font-semibold">Абсолютная (100%)</span>
+                                </div>
+                                <div class="w-full h-2 rounded-full bg-obsidian-800 overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-crimson-600 to-lunar-500" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. ARCHIVE OF MOON BREATHING (АРХИВ ДЫХАНИЯ ЛУНЫ — ВСЕ 16 СТИЛЕЙ)
+         ========================================== -->
+    <section id="archive" class="relative z-10 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Section Heading -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amethyst-900/60 border border-lunar-500/30 text-lunar-400 text-xs uppercase tracking-widest mb-3">
+                <span>Полный Канон Первой Высшей Луны</span>
+                <span class="font-jp">• 月の呼吸 (全十六型)</span>
+            </div>
+            <h2 class="title-serif text-3xl sm:text-5xl font-bold text-white">
+                Архив Дыхания Луны: <span class="text-lunar-500">Все 16 Стилей</span>
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base mt-3">
+                Каждая ката сопровождается живой визуальной вставкой траектории клинка и роящихся багрово-золотых полумесяцев. Нажмите «Воспроизвести технику» для запуска полноэкранного боевого симулятора.
+            </p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="ornate-card rounded-2xl p-4 sm:p-5 mb-10 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2" id="kataFilterButtons">
+                <button onclick="filterKatas('all')" data-filter="all" class="kata-filter-btn active px-3.5 py-2 rounded-xl text-xs font-semibold bg-crimson-600 text-lunar-400 border border-lunar-500/50 transition-all">
+                    Все стили (16)
+                </button>
+                <button onclick="filterKatas('slash')" data-filter="slash" class="kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-gray-300 border border-amethyst-700/60 hover:border-lunar-500/40 transition-all">
+                    Быстрое рассечение
+                </button>
+                <button onclick="filterKatas('vortex')" data-filter="vortex" class="kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-gray-300 border border-amethyst-700/60 hover:border-lunar-500/40 transition-all">
+                    Защитный вихрь
+                </button>
+                <button onclick="filterKatas('ranged')" data-filter="ranged" class="kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-gray-300 border border-amethyst-700/60 hover:border-lunar-500/40 transition-all">
+                    Дальняя дистанция
+                </button>
+                <button onclick="filterKatas('cataclysm')" data-filter="cataclysm" class="kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-gray-300 border border-amethyst-700/60 hover:border-lunar-500/40 transition-all">
+                    Масштабное уничтожение
+                </button>
+                <button onclick="filterKatas('form2')" data-filter="form2" class="kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-lunar-400 border border-crimson-500/40 hover:border-lunar-500 transition-all">
+                    ⚔️ Высшие каты II формы
+                </button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative min-w-[240px]">
+                <input
+                    type="text"
+                    id="kataSearchInput"
+                    oninput="handleKataSearch(this.value)"
+                    placeholder="Поиск каты по названию или номеру..."
+                    class="w-full pl-9 pr-4 py-2 rounded-xl bg-obsidian-950 border border-amethyst-700/70 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-lunar-500 transition-colors"
+                />
+                <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- 16 Styles Grid Container -->
+        <div id="kataGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Dynamically populated by JavaScript with 16 unique live Canvas visual inserts -->
+        </div>
+    </section>
+
+    <!-- ==========================================
+         MODAL: ИНТЕРАКТИВНЫЙ ПОЛИГОН ДЫХАНИЯ ЛУНЫ
+         ========================================== -->
+    <div id="kataSimulatorModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-obsidian-950/90 backdrop-blur-xl">
+        <div class="ornate-card rounded-3xl max-w-5xl w-full overflow-hidden border border-lunar-500/50 shadow-2xl shadow-crimson-600/30 flex flex-col max-h-[92vh]">
+            <!-- Modal Top Header -->
+            <div class="px-6 py-4 bg-obsidian-900 border-b border-amethyst-700/60 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <span id="modalKataNumber" class="px-3 py-1 rounded-lg bg-crimson-600/30 border border-crimson-500 text-lunar-400 font-bold text-xs uppercase">
+                        I КАТА
+                    </span>
+                    <span id="modalKataJp" class="font-jp text-sm sm:text-base text-gray-300">壱ノ型 闇月・宵の宮</span>
+                </div>
+                <button onclick="closeKataModal()" class="p-2 rounded-xl bg-obsidian-800 text-gray-400 hover:text-white hover:bg-crimson-600/40 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-5 sm:p-7 overflow-y-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <!-- Large Interactive Visual Insert Canvas (7 cols) -->
+                <div class="lg:col-span-7 relative rounded-2xl overflow-hidden border border-amethyst-600/50 bg-obsidian-950 aspect-[16/10] flex items-center justify-center">
+                    <canvas id="modalSimulatorCanvas" class="w-full h-full block"></canvas>
+
+                    <!-- Overlay Controls on Canvas -->
+                    <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-auto">
+                        <button onclick="replayModalKataStrike()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-crimson-600/90 hover:bg-crimson-500 text-lunar-400 border border-lunar-500/50 shadow-lg flex items-center gap-1.5 transition-all">
+                            <span>⚡ Повторить взмах</span>
+                        </button>
+                        <button id="slowMoBtn" onclick="toggleModalSlowMo()" class="px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900/90 hover:bg-amethyst-800 text-gray-200 border border-amethyst-500/50 transition-all">
+                            Прозрачный Мир: 1.0x
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kata Details & Trajectory Breakdown (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-5">
+                    <div>
+                        <div id="modalBladeRequirement" class="text-xs font-semibold uppercase tracking-widest text-crimson-400 mb-1">
+                            I Форма Клинка • Быстрое рассечение
+                        </div>
+                        <h3 id="modalKataTitle" class="title-serif text-2xl sm:text-3xl font-bold text-white mb-3">
+                            Темная луна — Вечернее святилище
+                        </h3>
+                        <p id="modalKataDescription" class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Описание техники и траектории удара.
+                        </p>
+
+                        <!-- Visual Trajectory Legend -->
+                        <div class="p-4 rounded-2xl bg-obsidian-900/90 border border-amethyst-800 space-y-2.5">
+                            <div class="text-xs font-semibold text-lunar-400 uppercase tracking-wider">Геометрия визуальной вставки:</div>
+                            <div id="modalTrajectoryNote" class="text-xs text-gray-300 leading-relaxed">
+                                Горизонтальная багровая дуга с роем золотистых полумесяцев.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combat Specs -->
+                    <div class="grid grid-cols-3 gap-2.5 text-center">
+                        <div class="p-2.5 rounded-xl bg-obsidian-900 border border-amethyst-800/80">
+                            <div class="text-[10px] text-gray-400 uppercase">Дистанция</div>
+                            <div id="modalSpecRange" class="text-xs sm:text-sm font-bold text-lunar-400 mt-0.5">Ближняя</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-obsidian-900 border border-amethyst-800/80">
+                            <div class="text-[10px] text-gray-400 uppercase">Вектор</div>
+                            <div id="modalSpecVector" class="text-xs sm:text-sm font-bold text-crimson-400 mt-0.5">Горизонталь</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-obsidian-900 border border-amethyst-800/80">
+                            <div class="text-[10px] text-gray-400 uppercase">Полумесяцы</div>
+                            <div id="modalSpecDensity" class="text-xs sm:text-sm font-bold text-purple-300 mt-0.5">Высокая</div>
+                        </div>
+                    </div>
+
+                    <!-- Prev / Next Kata Navigation -->
+                    <div class="flex items-center justify-between pt-3 border-t border-amethyst-800/60">
+                        <button onclick="navigateModalKata(-1)" class="px-4 py-2 rounded-xl text-xs font-medium bg-obsidian-800 hover:bg-amethyst-800 text-gray-200 transition-colors">
+                            ← Предыдущая ката
+                        </button>
+                        <span id="modalKataCounter" class="text-xs text-gray-400 font-mono">1 / 16</span>
+                        <button onclick="navigateModalKata(1)" class="px-4 py-2 rounded-xl text-xs font-medium bg-obsidian-800 hover:bg-amethyst-800 text-gray-200 transition-colors">
+                            Следующая ката →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         FOOTER (ПОДВАЛ САЙТА)
+         ========================================== -->
+    <footer class="relative z-10 border-t border-amethyst-800/60 bg-obsidian-950 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-xl bg-amethyst-900 border border-lunar-500/40 flex items-center justify-center font-jp text-lunar-500 font-bold">
+                    半月
+                </div>
+                <div>
+                    <div class="title-serif text-lg font-bold text-white tracking-wider">ОТРЯД ХАНГЕЦУ • КОКУШИБО</div>
+                    <div class="text-xs text-gray-500">Первая Высшая Луна • Архив Дыхания Луны и Оружейная Кёкокукамусари</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-gray-400 font-jp">
+                <span>上弦の壱</span>
+                <span>•</span>
+                <span>黒死牟</span>
+                <span>•</span>
+                <span>月の呼吸</span>
+                <span>•</span>
+                <span>半月</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT ENGINE (ALL INTERACTIVITY & 16 CANVAS VISUALIZERS)
+         ========================================== -->
+    <script>
+        /* =========================================================================
+           1. DATA: ALL 16 STYLES OF MOON BREATHING (АРХИВ ВСЕХ 16 КАТ ДЫХАНИЯ ЛУНЫ)
+           ========================================================================= */
+        const MOON_KATAS = [
+            {
+                id: 1,
+                roman: "I",
+                name: "Первая ката: Темная луна — Вечернее святилище",
+                jp: "壱ノ型 闇月・宵の宮",
+                romaji: "Ichi no kata: Yamizuki - Yoi no Miya",
+                category: ["slash"],
+                bladeForm: 1,
+                range: "Ближняя / Средняя",
+                vector: "Горизонтальный иайдзюцу",
+                density: "Рой вдоль лезвия",
+                desc: "Мгновенное обнажение клинка с молниеносным горизонтальным взмахом. Скорость удара настолько высока, что рассечение происходит прежде, чем цель осознает движение руки мечника.",
+                trajectoryNote: "Широкая одиночная багрово-золотая горизонтальная дуга с каскадом вращающихся малых полумесяцев вдоль вектора среза.",
+                patternType: "horizontal_draw"
+            },
+            {
+                id: 2,
+                roman: "II",
+                name: "Вторая ката: Цветочный жемчуг лунного сияния",
+                jp: "弐ノ型 珠華ノ弄月",
+                romaji: "Ni no kata: Shuka no Rōgetsu",
+                category: ["vortex", "slash"],
+                bladeForm: 1,
+                range: "Средняя",
+                vector: "Тройная дуга + волна",
+                density: "Высокая (Веер)",
+                desc: "Сочетание обороны и контратаки: мечник выполняет три круговых взмаха, отражающих выпады со всех сторон и одновременно выпускающих вперед веер острых лунных лезвий.",
+                trajectoryNote: "Три концентрические полусферы вокруг центра с веерным выбросом золотистых серпов вперед.",
+                patternType: "triple_pearl_fan"
+            },
+            {
+                id: 3,
+                roman: "III",
+                name: "Третья ката: Смертельная луна покинутости — Цепь",
+                jp: "参ノ型 厭忌月・銷り",
+                romaji: "San no kata: Enkizuki - Tsugari",
+                category: ["slash"],
+                bladeForm: 1,
+                range: "Средняя / Широкая",
+                vector: "Двойной серповидный крест",
+                density: "Штормовая цепь",
+                desc: "Два широких размашистых удара по пересекающимся дугам создают позади и вокруг цели цепную бурю полумесяцев, отрезающую любые пути к отступлению.",
+                trajectoryNote: "Два крупных скрещенных серпа в форме буквы X, скованных цепью мелких вращающихся лунных клинков.",
+                patternType: "chained_crescents"
+            },
+            {
+                id: 4,
+                roman: "IV",
+                name: "Четвертая ката: Лунный силуэт — Пробуждение в сумерках",
+                jp: "肆ノ型 月輪・宵寝覚",
+                romaji: "Shi no kata: Gachirin - Yoinezame",
+                category: ["slash"],
+                bladeForm: 1,
+                range: "Средняя (Рывок)",
+                vector: "Восходящая спираль",
+                density: "Сдвоенный шлейф",
+                desc: "Сверхскоростное сближение по изогнутой траектории с восходящим диагональным рассечением, оставляющим в воздухе ослепительный силуэт двух пересекающихся лунных дисков.",
+                trajectoryNote: "Две смещенные кольцевые орбиты с пронзающим их диагональным багровым лучом.",
+                patternType: "twilight_spiral"
+            },
+            {
+                id: 5,
+                roman: "V",
+                name: "Пятая ката: Бедственный вихрь лунного духа",
+                jp: "伍ノ型 月魄災渦",
+                romaji: "Go no kata: Geppaku Saika",
+                category: ["vortex"],
+                bladeForm: 1,
+                range: "Вокруг мечника (360°)",
+                vector: "Многослойный торнадо",
+                density: "Экстремальная",
+                desc: "Кокушибо создает множество наслаивающихся друг на друга изогнутых разрезов без видимого взмаха клинка. Вокруг возникает сферический вихрь, притягивающий и рассекающий все в радиусе действия.",
+                trajectoryNote: "Вращающаяся многослойная воронка из багрово-фиолетовых дуг и десятков орбитальных полумесяцев.",
+                patternType: "calamity_vortex"
+            },
+            {
+                id: 6,
+                roman: "VI",
+                name: "Шестая ката: Вечная ночь, одинокая луна — Непрекращающаяся",
+                jp: "陸ノ型 常夜孤月・無間",
+                romaji: "Roku no kata: Tokoyo Kogetsu - Muken",
+                category: ["slash", "ranged"],
+                bladeForm: 1,
+                range: "Дальняя (до 20 м)",
+                vector: "Хаотичный шквал полос",
+                density: "Сплошной поток",
+                desc: "Беспощадный шквал многократных взмахов перед собой, формирующий плотную сеть разнонаправленных лунных лезвий, способную в мгновение ока изрезать даже каменные своды.",
+                trajectoryNote: "Густая решетка стремительных перекрестных разрезов, заполняющая все фронтальное пространство.",
+                patternType: "perpetual_barrage"
+            },
+            {
+                id: 7,
+                roman: "VII",
+                name: "Седьмая ката: Зеркало несчастья — Лунный свет",
+                jp: "漆ノ型 厄鏡・月映え",
+                romaji: "Shichi no kata: Yakkyō - Zukibae",
+                category: ["ranged", "form2"],
+                bladeForm: 2,
+                range: "Сверхдальняя",
+                vector: "5 расходящихся волн",
+                density: "Масштабный веер",
+                desc: "Выполняется пробужденным ветвящимся клинком II формы. Мощный фронтальный взмах порождает пять расходящихся веером ударных волн, оставляющих глубокие борозды и тучи мелких серпов.",
+                trajectoryNote: "Пять лучевых багрово-золотых трасс, расходящихся от клинка подобно когтям по всей ширине полигона.",
+                patternType: "mirror_five_waves"
+            },
+            {
+                id: 8,
+                roman: "VIII",
+                name: "Восьмая ката: Кольцо лунного дракона — Хвост",
+                jp: "捌ノ型 月龍輪尾",
+                romaji: "Hachi no kata: Getsuryū Rinbi",
+                category: ["ranged", "form2"],
+                bladeForm: 2,
+                range: "Сверхдальняя (Широкий сектор)",
+                vector: "Гигантское кольцо-серп",
+                density: "Крупнокалиберный шлейф",
+                desc: "Используя максимальную длину модифицированного клинка, Кокушибо втрое увеличивает радиус обычного горизонтального удара, создавая колоссальный смыкающийся серп.",
+                trajectoryNote: "Исполинская изогнутая дуга драконьего хвоста, охватывающая почти весь экран единым мощным росчерком.",
+                patternType: "dragon_ring_tail"
+            },
+            {
+                id: 9,
+                roman: "IX",
+                name: "Девятая ката: Нисходящая луна — Непрерывные фазы",
+                jp: "玖ノ型 降り月・連面",
+                romaji: "Ku no kata: Kudarizuki - Renmen",
+                category: ["ranged", "form2"],
+                bladeForm: 2,
+                range: "Дальняя / Вертикальная",
+                vector: "Нисходящий купол",
+                density: "Непрерывный ливень",
+                desc: "Поток бесконечных серповидных разрезов, обрушивающихся сверху вниз под разными углами, словно с ночного неба падают сами фазы луны, лишая противника маневра.",
+                trajectoryNote: "Каскад падающих сверху перекрестных полумесяцев, создающих плотную завесу.",
+                patternType: "waning_moon_phases"
+            },
+            {
+                id: 10,
+                roman: "X",
+                name: "Десятая ката: Пронзающие лунные лезвия сквозь листву",
+                jp: "拾ノ型 穿面斬・蘿月",
+                romaji: "Jū no kata: Senmenzan - Ragetsu",
+                category: ["ranged", "form2"],
+                bladeForm: 2,
+                range: "Дальняя",
+                vector: "Тройные вращающиеся диски",
+                density: "Пилообразные кольца",
+                desc: "Дальняя атака II формы клинка, запускающая три стремительно вращающихся многослойных диска из лунных серпов, которые прорезают любые преграды на своем пути.",
+                trajectoryNote: "Три вращающихся зубчатых колеса из золотисто-багровых полумесяцев, идущих по сходящимся траекториям.",
+                patternType: "ivy_moon_sawblades"
+            },
+            {
+                id: 11,
+                roman: "XI",
+                name: "Одиннадцатая ката: Затмение тени — Безмолвный серп",
+                jp: "拾壱ノ型 影蝕・無音三日月",
+                romaji: "Jūichi no kata: Eishoku - Muon Mikazuki",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Дальняя (Круговой охват)",
+                vector: "Смыкающееся затмение",
+                density: "Скрытые лезвия",
+                desc: "Вокруг цели формируется темное багровое кольцо затмения, из границ которого к центру беззвучно устремляются длинные серповидные разрезы ветвящегося клинка.",
+                trajectoryNote: "Темный диск затмения в центре с бьющими внутрь под острыми углами золотыми серпами.",
+                patternType: "shadow_eclipse"
+            },
+            {
+                id: 12,
+                roman: "XII",
+                name: "Двенадцатая ката: Отражение полной луны в ночи",
+                jp: "拾弐ノ型 夜鏡・満月残影",
+                romaji: "Jūni no kata: Yakyō - Mangetsu Zan'ei",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Дальняя / Площадная",
+                vector: "Зеркальная симметрия",
+                density: "Двойная решетка",
+                desc: "Боковые отростки клинка II формы создают синхронное зеркальное отражение каждого основного взмаха, мгновенно удваивая количество режущих волн сверху и снизу.",
+                trajectoryNote: "Симметричные верхние и нижние дуги, смыкающиеся в форме сияющего полнолуния.",
+                patternType: "night_mirror_fullmoon"
+            },
+            {
+                id: 13,
+                roman: "XIII",
+                name: "Тринадцатая ката: Багровый полумесяц — Раскол небосвода",
+                jp: "拾参ノ型 紅三日月・天裂",
+                romaji: "Jūsan no kata: Kurenai Mikazuki - Tensaki",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Сверхдальняя",
+                vector: "Вертикальный разлом",
+                density: "Каскадный взрыв",
+                desc: "Сокрушительный вертикальный взмах снизу вверх, раскалывающий пространство гигантским багровым полумесяцем, из которого во все стороны разлетаются вторичные лезвия.",
+                trajectoryNote: "Мощный центральный вертикальный серп от основания до вершины с радиальным разлетом осколков.",
+                patternType: "crimson_sky_split"
+            },
+            {
+                id: 14,
+                roman: "XIV",
+                name: "Четырнадцатая ката: Катастрофа — Полный серп небесной луны",
+                jp: "拾肆ノ型 兇変・天満繊月",
+                romaji: "Jūshi no kata: Kyōhen - Tenman Sengetsu",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Тотальный охват",
+                vector: "Всенаправленный вихрь клешней",
+                density: "Катастрофическая",
+                desc: "Взмах увеличенным клинком порождает исполинский многослойный вихрь из перекрещивающихся гигантских полумесяцев, расширяющийся во всех направлениях подобно буре.",
+                trajectoryNote: "Сходящиеся и расходящиеся гигантские серповидные клешни, образующие многослойный шторм.",
+                patternType: "catastrophe_tenman"
+            },
+            {
+                id: 15,
+                roman: "XV",
+                name: "Пятнадцатая ката: Бездна шести лун — Вечное сияние",
+                jp: "拾伍ノ型 六月淵・久遠",
+                romaji: "Jūgo no kata: Rokugatsu Fuchi - Kuon",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Сверхдальняя (Шесть узлов)",
+                vector: "Гексагональная сеть",
+                density: "Шесть вихревых центров",
+                desc: "Высшая геометрическая техника, формирующая в пространстве шесть синхронных центров вращения — по числу глаз Первой Луны, — которые связываются дугами сплошного рассечения.",
+                trajectoryNote: "Шесть светящихся лунных сфер в гексагональном порядке, соединенных непрерывными режущими дугами.",
+                patternType: "six_moons_abyss"
+            },
+            {
+                id: 16,
+                roman: "XVI",
+                name: "Шестнадцатая ката: Лунная радуга — Осколок луны",
+                jp: "拾陸ノ型 月虹・孤留月",
+                romaji: "Jūroku no kata: Gekkō - Korūgetsu",
+                category: ["cataclysm", "form2"],
+                bladeForm: 2,
+                range: "Абсолютная (С неба до земли)",
+                vector: "6 нисходящих лунных колонн",
+                density: "Апогей Дыхания Луны",
+                desc: "Вершина Дыхания Луны. Мощнейший взмах вниз обрушивает с высоты шесть колоссальных вертикальных лунных колонн-молний, раскалывающих землю и уничтожающих все вокруг.",
+                trajectoryNote: "Шесть исполинских вертикальных столпов багрово-золотого света, бьющих сверху вниз с кратерами полумесяцев у основания.",
+                patternType: "moonbow_six_pillars"
+            }
+        ];
+
+        /* =========================================================================
+           2. BLADE ANATOMY HOTSPOTS DATA
+           ========================================================================= */
+        const BLADE_NODES = [
+            {
+                badge: "Узел #1 • Рукоять и Гарда",
+                title: "Рукоять «Кёкокукамусари» с живыми глазами",
+                desc: "Оплетена геометрическим узором Киккомон. Глаза на рукояти напрямую связаны с нервной системой Первой Высшей Луны, обеспечивая абсолютный контроль угла атаки в «Прозрачном Мире»."
+            },
+            {
+                badge: "Узел #2 • Материал полотна",
+                title: "Сверхплотная демоническая плоть и кость",
+                desc: "Клинок создан самим Кокушибо из собственной плоти. Он превосходит по прочности любую сталь Ничирин и мгновенно восстанавливает форму при малейшем повреждении."
+            },
+            {
+                badge: "Узел #3 • Сенсорика лезвия",
+                title: "Всевидящие глаза на полотне меча",
+                desc: "Глаза, расположенные вдоль дола клинка, расширяют угол обзора мечника на все 360 градусов и генерируют нестабильные багрово-золотые полумесяцы при каждом взмахе."
+            },
+            {
+                badge: "Узел #4 • Пробуждение II Формы",
+                title: "Серповидные ответвления Второй Формы",
+                desc: "При модификации клинок удлиняется и выпускает три боковых серповидных лезвия-отростка. Это делает траекторию ударов нечитаемой и открывает доступ к высшим катам (VII–XVI)."
+            }
+        ];
+
+        /* =========================================================================
+           3. STATE & WEB AUDIO SYNTHESIZER (OPTIONAL KATANA RESONANCE)
+           ========================================================================= */
+        let isTransparentWorld = false;
+        let isBladeFormTwo = false;
+        let audioEnabled = false;
+        let audioCtx = null;
+        let currentFilter = 'all';
+        let currentSearch = '';
+        let activeModalKataIndex = 0;
+        let modalSlowMo = 1.0;
+        let modalBurstProgress = 1.0;
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (AudioContextClass) {
+                    audioCtx = new AudioContextClass();
+                }
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function toggleAudio() {
+            audioEnabled = !audioEnabled;
+            if (audioEnabled) initAudioContext();
+            document.getElementById('soundIconOff').classList.toggle('hidden', audioEnabled);
+            document.getElementById('soundIconOn').classList.toggle('hidden', !audioEnabled);
+            if (audioEnabled) playSlashSound('light');
+        }
+
+        function playSlashSound(type = 'slash') {
+            if (!audioEnabled) return;
+            try {
+                initAudioContext();
+                if (!audioCtx) return;
+
+                const now = audioCtx.currentTime;
+                // White noise burst for blade wind slash
+                const bufferSize = audioCtx.sampleRate * (type === 'form2' ? 0.55 : 0.28);
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioCtx.sampleRate * (type === 'form2' ? 0.18 : 0.08)));
+                }
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.setValueAtTime(type === 'form2' ? 900 : 1600, now);
+                filter.frequency.exponentialRampToValueAtTime(280, now + (type === 'form2' ? 0.5 : 0.25));
+                filter.Q.value = 2.2;
+
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.28, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + (type === 'form2' ? 0.52 : 0.26));
+
+                noise.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+                noise.start(now);
+
+                // Metallic resonant chime
+                const osc = audioCtx.createOscillator();
+                const oscGain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(type === 'form2' ? 520 : 880, now);
+                osc.frequency.exponentialRampToValueAtTime(140, now + 0.35);
+                oscGain.gain.setValueAtTime(0.14, now);
+                oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+                osc.connect(oscGain);
+                oscGain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.36);
+            } catch (e) {
+                // Ignore audio errors on restricted environments
+            }
+        }
+
+        /* =========================================================================
+           4. HERO SECTION: 6 EYES CURSOR TRACKING & TRANSPARENT WORLD TOGGLE
+           ========================================================================= */
+        function setupEyeTracking() {
+            const pupils = document.querySelectorAll('.eye-pupil');
+            const bladePupils = document.querySelectorAll('.blade-pupil');
+
+            window.addEventListener('mousemove', (e) => {
+                const normX = (e.clientX / window.innerWidth - 0.5) * 2;
+                const normY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+                const maxOffsetX = 9;
+                const maxOffsetY = 5.5;
+
+                pupils.forEach((pupil) => {
+                    const dx = normX * maxOffsetX;
+                    const dy = normY * maxOffsetY;
+                    pupil.setAttribute('transform', `translate(${dx.toFixed(2)}, ${dy.toFixed(2)})`);
+                });
+
+                bladePupils.forEach((bp) => {
+                    const dx = normX * 3.5;
+                    const dy = normY * 2;
+                    bp.setAttribute('transform', `translate(${dx.toFixed(2)}, ${dy.toFixed(2)})`);
+                });
+            });
+        }
+
+        function toggleTransparentWorld() {
+            isTransparentWorld = !isTransparentWorld;
+            document.body.classList.toggle('transparent-world', isTransparentWorld);
+
+            const statusBadge = document.getElementById('twStatusBadge');
+            const twBtn = document.getElementById('twToggleBtn');
+
+            if (isTransparentWorld) {
+                statusBadge.textContent = 'Режим: Прозрачный Мир (透き通る世界)';
+                statusBadge.className = 'px-2.5 py-0.5 rounded-full bg-crimson-600/40 border border-lunar-500 text-lunar-400 font-semibold';
+                twBtn.classList.add('border-lunar-500', 'shadow-lg', 'shadow-crimson-500/40');
+                playSlashSound('light');
+            } else {
+                statusBadge.textContent = 'Режим: Ночное созерцание';
+                statusBadge.className = 'px-2.5 py-0.5 rounded-full bg-amethyst-800/80 border border-amethyst-500/40 text-lunar-400';
+                twBtn.classList.remove('border-lunar-500', 'shadow-lg', 'shadow-crimson-500/40');
+            }
+        }
+
+        /* =========================================================================
+           5. INTERACTIVE ARMORY: KYOKOKUKAMUSARI 2ND FORM & SLASH ENGINE
+           ========================================================================= */
+        let bladeSlashParticles = [];
+        let bladeAmbientCrescents = [];
+
+        function toggleBladeForm() {
+            isBladeFormTwo = !isBladeFormTwo;
+            const stage = document.getElementById('bladeStageContainer');
+            const svg = document.getElementById('kyokokukamusariSvg');
+            const btnText = document.getElementById('modifyBtnText');
+            const indicator = document.getElementById('bladeFormIndicator');
+            const jpSub = document.getElementById('bladeJpSubtitle');
+            const navBadge = document.getElementById('navBladeBadge');
+            const kataBadge = document.getElementById('bladeKataAccessBadge');
+
+            // Trigger dramatic screen shake & slash burst
+            stage.classList.remove('shake-active');
+            void stage.offsetWidth;
+            stage.classList.add('shake-active');
+
+            svg.classList.toggle('form-2-active', isBladeFormTwo);
+            playSlashSound(isBladeFormTwo ? 'form2' : 'slash');
+
+            if (isBladeFormTwo) {
+                btnText.textContent = 'Вернуть клинок: Первая форма';
+                indicator.textContent = 'II ФОРМА • Пробужденный Ветвящийся Клинок';
+                indicator.className = 'px-3.5 py-1 rounded-lg bg-crimson-600/80 border border-lunar-400 text-lunar-300 text-xs font-bold uppercase tracking-wider shadow-lg shadow-crimson-600/40';
+                jpSub.textContent = '異形形態 • 虚哭神去 (覚醒)';
+                navBadge.textContent = 'II ФОРМА';
+                navBadge.className = 'text-[10px] px-1.5 py-0.5 rounded bg-crimson-600 text-lunar-300 font-semibold';
+                kataBadge.textContent = 'Открыты все I–XVI каты';
+                kataBadge.className = 'text-xs px-2.5 py-0.5 rounded bg-crimson-600/40 border border-crimson-500 text-lunar-400 font-semibold';
+
+                // Update stats
+                document.getElementById('statRangeLabel').textContent = 'Абсолютная (Сверхдальняя)';
+                document.getElementById('statRangeBar').style.width = '100%';
+                document.getElementById('statCrescentLabel').textContent = '360° Непрерывный шторм';
+                document.getElementById('statCrescentBar').style.width = '100%';
+                document.getElementById('statChaosLabel').textContent = 'Хаотическая (Нечитаемая)';
+                document.getElementById('statChaosBar').style.width = '100%';
+
+                inspectBladePart(3);
+            } else {
+                btnText.textContent = 'Модифицировать клинок: Вторая форма';
+                indicator.textContent = 'I ФОРМА • Изначальная Катана';
+                indicator.className = 'px-3.5 py-1 rounded-lg bg-amethyst-800/90 border border-lunar-500/40 text-lunar-400 text-xs font-bold uppercase tracking-wider';
+                jpSub.textContent = '標準形態 • 虚哭神去';
+                navBadge.textContent = 'I ФОРМА';
+                navBadge.className = 'text-[10px] px-1.5 py-0.5 rounded bg-amethyst-700 text-lunar-400 font-semibold';
+                kataBadge.textContent = 'Доступны I–VI каты';
+                kataBadge.className = 'text-xs px-2.5 py-0.5 rounded bg-amethyst-800 text-lunar-400';
+
+                document.getElementById('statRangeLabel').textContent = 'Высокая (Средняя и дальняя)';
+                document.getElementById('statRangeBar').style.width = '72%';
+                document.getElementById('statCrescentLabel').textContent = 'Концентрированная дуга';
+                document.getElementById('statCrescentBar').style.width = '76%';
+                document.getElementById('statChaosLabel').textContent = 'Идеальная геометрия';
+                document.getElementById('statChaosBar').style.width = '70%';
+
+                inspectBladePart(1);
+            }
+
+            triggerBladeSlashTest();
+        }
+
+        function inspectBladePart(index) {
+            const node = BLADE_NODES[index] || BLADE_NODES[0];
+            document.getElementById('nodeBadge').textContent = node.badge;
+            document.getElementById('nodeTitle').textContent = node.title;
+            document.getElementById('nodeDesc').textContent = node.desc;
+        }
+
+        function triggerBladeSlashTest() {
+            const canvas = document.getElementById('bladeEffectCanvas');
+            if (!canvas) return;
+            const w = canvas.width;
+            const h = canvas.height;
+
+            playSlashSound(isBladeFormTwo ? 'form2' : 'slash');
+
+            const slashCount = isBladeFormTwo ? 5 : 2;
+            for (let i = 0; i < slashCount; i++) {
+                bladeSlashParticles.push({
+                    type: 'arc',
+                    x: w * (0.35 + Math.random() * 0.45),
+                    y: h * (0.25 + Math.random() * 0.5),
+                    radius: (isBladeFormTwo ? 160 : 110) + Math.random() * 90,
+                    angle: (Math.random() - 0.5) * Math.PI * 0.9,
+                    life: 1.0,
+                    decay: 0.025 + Math.random() * 0.015,
+                    color: i % 2 === 0 ? '#f4d58d' : '#e61938'
+                });
+            }
+
+            const miniCount = isBladeFormTwo ? 28 : 12;
+            for (let i = 0; i < miniCount; i++) {
+                bladeSlashParticles.push({
+                    type: 'crescent',
+                    x: w * (0.25 + Math.random() * 0.65),
+                    y: h * (0.3 + Math.random() * 0.4),
+                    vx: (Math.random() - 0.3) * (isBladeFormTwo ? 9 : 5),
+                    vy: (Math.random() - 0.5) * (isBladeFormTwo ? 7 : 4),
+                    size: 7 + Math.random() * (isBladeFormTwo ? 14 : 8),
+                    rot: Math.random() * Math.PI * 2,
+                    vRot: (Math.random() - 0.5) * 0.22,
+                    life: 1.0,
+                    decay: 0.018 + Math.random() * 0.015,
+                    gold: Math.random() > 0.35
+                });
+            }
+        }
+
+        /* =========================================================================
+           6. HELPER TO DRAW AUTHENTIC MOON BREATHING CRESCENTS & SLASH ARCS
+           ========================================================================= */
+        function drawCrescentMoon(ctx, x, y, radius, rotation, fillStyle, glowColor) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(rotation);
+            if (glowColor) {
+                ctx.shadowColor = glowColor;
+                ctx.shadowBlur = 10;
+            }
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, -Math.PI * 0.65, Math.PI * 0.65, false);
+            ctx.arc(radius * 0.42, 0, radius * 0.82, Math.PI * 0.55, -Math.PI * 0.55, true);
+            ctx.closePath();
+            ctx.fillStyle = fillStyle;
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function drawCurvedSlashArc(ctx, cx, cy, radius, startAngle, endAngle, thickness, primaryColor, coreColor, alpha = 1) {
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.shadowColor = primaryColor;
+            ctx.shadowBlur = 14;
+
+            const midAngle = (startAngle + endAngle) / 2;
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius, startAngle, endAngle, false);
+            const innerR = Math.max(4, radius - thickness);
+            ctx.arc(
+                cx + Math.cos(midAngle) * (thickness * 0.35),
+                cy + Math.sin(midAngle) * (thickness * 0.35),
+                innerR,
+                endAngle,
+                startAngle,
+                true
+            );
+            ctx.closePath();
+            ctx.fillStyle = primaryColor;
+            ctx.fill();
+
+            // Bright razor core
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius - thickness * 0.25, startAngle + 0.08, endAngle - 0.08, false);
+            ctx.strokeStyle = coreColor || '#fff6d6';
+            ctx.lineWidth = Math.max(1.2, thickness * 0.22);
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        /* =========================================================================
+           7. UNIQUE TRAJECTORY RENDERER FOR ALL 16 MOON BREATHING STYLES
+           ========================================================================= */
+        function renderKataTrajectory(ctx, w, h, kataId, time, intensity = 1.0) {
+            ctx.clearRect(0, 0, w, h);
+
+            // Subtle dark lunar grid background inside the visualizer
+            const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.5, 10, w * 0.5, h * 0.5, w * 0.7);
+            bgGrad.addColorStop(0, 'rgba(56, 15, 62, 0.38)');
+            bgGrad.addColorStop(1, 'rgba(7, 5, 10, 0.95)');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, w, h);
+
+            const cx = w * 0.5;
+            const cy = h * 0.5;
+            const scale = Math.min(w, h) / 220;
+            const t = time * 0.0024;
+            const pulse = (Math.sin(t * 2.5) + 1) * 0.5;
+
+            // Render distinct trajectory per kata ID (1 to 16)
+            switch (kataId) {
+                case 1: {
+                    // 1st Form: Single ultra-fast horizontal iaijutsu draw arc
+                    const sweep = (t * 1.8) % 1;
+                    drawCurvedSlashArc(ctx, cx, cy + 45 * scale, 95 * scale, -Math.PI * 0.82, -Math.PI * 0.18, 14 * scale * intensity, '#e61938', '#f4d58d', 0.9);
+                    // Rapid horizontal cut line
+                    ctx.save();
+                    ctx.strokeStyle = '#f4d58d';
+                    ctx.shadowColor = '#e61938';
+                    ctx.shadowBlur = 12;
+                    ctx.lineWidth = 2.5 * scale;
+                    ctx.beginPath();
+                    ctx.moveTo(w * 0.1, cy);
+                    ctx.lineTo(w * (0.1 + 0.8 * Math.min(1, sweep * 1.5)), cy - 6 * scale);
+                    ctx.stroke();
+                    ctx.restore();
+                    break;
+                }
+                case 2: {
+                    // 2nd Form: 3 layered pearl arcs + forward crescent wave
+                    for (let i = 0; i < 3; i++) {
+                        const r = (36 + i * 22) * scale;
+                        const rot = t * (i % 2 === 0 ? 1.5 : -1.5) + i;
+                        drawCurvedSlashArc(ctx, cx - 15 * scale, cy, r, rot, rot + Math.PI * 1.15, 9 * scale, i === 1 ? '#f4d58d' : '#e61938', '#fff', 0.85);
+                    }
+                    break;
+                }
+                case 3: {
+                    // 3rd Form: Dual gigantic chained intersecting X crescents
+                    drawCurvedSlashArc(ctx, cx - 28 * scale, cy, 72 * scale, -Math.PI * 0.45 + Math.sin(t) * 0.2, Math.PI * 0.45 + Math.sin(t) * 0.2, 13 * scale, '#e61938', '#f4d58d', 0.9);
+                    drawCurvedSlashArc(ctx, cx + 28 * scale, cy, 72 * scale, Math.PI * 0.55 - Math.sin(t) * 0.2, Math.PI * 1.45 - Math.sin(t) * 0.2, 13 * scale, '#9d4edd', '#f4d58d', 0.9);
+                    break;
+                }
+                case 4: {
+                    // 4th Form: Rising twilight spiral & dual lunar rings
+                    for (let i = 0; i < 2; i++) {
+                        const offset = (i === 0 ? -18 : 18) * scale;
+                        drawCurvedSlashArc(ctx, cx + offset, cy - offset * 0.4, 54 * scale, t * 2 + i * Math.PI, t * 2 + i * Math.PI + Math.PI * 1.35, 10 * scale, i === 0 ? '#f4d58d' : '#e61938', '#fff', 0.85);
+                    }
+                    break;
+                }
+                case 5: {
+                    // 5th Form: Calamity Vortex (Multi-layered rotating tornado)
+                    for (let i = 0; i < 5; i++) {
+                        const r = (22 + i * 15) * scale;
+                        const a = t * (2.5 - i * 0.25) + i * 1.2;
+                        drawCurvedSlashArc(ctx, cx, cy, r, a, a + Math.PI * 1.25, 8 * scale, i % 2 === 0 ? '#e61938' : '#7b2cbf', '#f4d58d', 0.85);
+                    }
+                    break;
+                }
+                case 6: {
+                    // 6th Form: Perpetual Night wild multi-directional slash barrage
+                    for (let i = 0; i < 6; i++) {
+                        const yOff = (i - 2.5) * 18 * scale;
+                        const phase = (t * 2 + i * 0.7) % 1;
+                        drawCurvedSlashArc(ctx, cx, cy + yOff + 40 * scale, 85 * scale, -Math.PI * 0.75 + (i % 2) * 0.2, -Math.PI * 0.25 + (i % 2) * 0.2, 7.5 * scale, i % 2 === 0 ? '#e61938' : '#f4d58d', '#fff', 0.6 + 0.4 * Math.sin(phase * Math.PI));
+                    }
+                    break;
+                }
+                case 7: {
+                    // 7th Form: Mirror of Misfortune — 5 diverging fan waves across ground/air
+                    for (let i = -2; i <= 2; i++) {
+                        const angle = i * 0.24 - Math.PI * 0.5;
+                        ctx.save();
+                        ctx.translate(cx, h * 0.86);
+                        ctx.rotate(angle + Math.PI * 0.5);
+                        drawCurvedSlashArc(ctx, 0, -45 * scale, 55 * scale, -Math.PI * 0.75, -Math.PI * 0.25, 9 * scale, i % 2 === 0 ? '#e61938' : '#f4d58d', '#fff', 0.88);
+                        ctx.restore();
+                    }
+                    break;
+                }
+                case 8: {
+                    // 8th Form: Moon-Dragon Ring Tail — Colossal sweeping crescent
+                    const rot = Math.sin(t * 1.6) * 0.35;
+                    drawCurvedSlashArc(ctx, cx, cy + 10 * scale, 88 * scale, -Math.PI * 0.9 + rot, Math.PI * 0.35 + rot, 20 * scale * intensity, '#e61938', '#f4d58d', 0.92);
+                    drawCurvedSlashArc(ctx, cx, cy + 10 * scale, 64 * scale, -Math.PI * 0.7 + rot, Math.PI * 0.2 + rot, 10 * scale, '#7b2cbf', '#fff', 0.75);
+                    break;
+                }
+                case 9: {
+                    // 9th Form: Waning Moon Phases — Endless descending criss-cross arcs
+                    for (let i = 0; i < 5; i++) {
+                        const xPos = w * (0.2 + i * 0.15);
+                        const yFall = ((t * 60 + i * 35) % (h * 0.8)) + h * 0.1;
+                        drawCurvedSlashArc(ctx, xPos, yFall, 38 * scale, 0.2, Math.PI - 0.2, 8 * scale, i % 2 === 0 ? '#f4d58d' : '#e61938', '#fff', 0.85);
+                    }
+                    break;
+                }
+                case 10: {
+                    // 10th Form: Drilling Moon Blades through Ivy — 3 spinning sawblade rings
+                    const centers = [
+                        { x: cx - 48 * scale, y: cy + 10 * scale },
+                        { x: cx + 48 * scale, y: cy + 10 * scale },
+                        { x: cx, y: cy - 22 * scale }
+                    ];
+                    centers.forEach((c, idx) => {
+                        for (let b = 0; b < 4; b++) {
+                            const a = t * 4 * (idx % 2 === 0 ? 1 : -1) + (b * Math.PI) / 2;
+                            drawCurvedSlashArc(ctx, c.x, c.y, 28 * scale, a, a + 1.1, 7 * scale, idx === 2 ? '#f4d58d' : '#e61938', '#fff', 0.9);
+                        }
+                    });
+                    break;
+                }
+                case 11: {
+                    // 11th Form: Shadow Eclipse — Dark crimson ring with inward-striking crescents
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, 42 * scale, 0, Math.PI * 2);
+                    ctx.fillStyle = '#07050a';
+                    ctx.strokeStyle = '#e61938';
+                    ctx.lineWidth = 3 * scale;
+                    ctx.shadowColor = '#e61938';
+                    ctx.shadowBlur = 18;
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.restore();
+
+                    for (let i = 0; i < 6; i++) {
+                        const a = t * 1.5 + (i * Math.PI) / 3;
+                        const px = cx + Math.cos(a) * 58 * scale;
+                        const py = cy + Math.sin(a) * 58 * scale;
+                        drawCrescentMoon(ctx, px, py, 16 * scale, a + Math.PI * 0.75, '#f4d58d', '#e61938');
+                    }
+                    break;
+                }
+                case 12: {
+                    // 12th Form: Night Mirror Full Moon — Mirrored top & bottom arcs
+                    drawCurvedSlashArc(ctx, cx, cy - 12 * scale, 68 * scale, Math.PI * 0.15, Math.PI * 0.85, 12 * scale, '#e61938', '#f4d58d', 0.9);
+                    drawCurvedSlashArc(ctx, cx, cy + 12 * scale, 68 * scale, -Math.PI * 0.85, -Math.PI * 0.15, 12 * scale, '#f4d58d', '#fff', 0.9);
+                    drawCurvedSlashArc(ctx, cx, cy, 42 * scale, t * 2, t * 2 + Math.PI * 1.5, 7 * scale, '#9d4edd', '#fff', 0.75);
+                    break;
+                }
+                case 13: {
+                    // 13th Form: Crimson Crescent Sky Split — Vertical heaven-splitting slash
+                    drawCurvedSlashArc(ctx, cx + 35 * scale, cy, 88 * scale, Math.PI * 0.58, Math.PI * 1.42, 18 * scale * intensity, '#e61938', '#f4d58d', 0.95);
+                    drawCurvedSlashArc(ctx, cx - 35 * scale, cy, 72 * scale, -Math.PI * 0.42, Math.PI * 0.42, 11 * scale, '#f4d58d', '#fff', 0.8);
+                    break;
+                }
+                case 14: {
+                    // 14th Form: Catastrophe — Tenman Crescent Moon (Omnidirectional giant claws)
+                    for (let i = 0; i < 6; i++) {
+                        const a = t * (i % 2 === 0 ? 1.8 : -1.8) + (i * Math.PI) / 3;
+                        const r = (42 + (i % 3) * 20) * scale;
+                        drawCurvedSlashArc(ctx, cx, cy, r, a, a + Math.PI * 0.95, 13 * scale * intensity, i % 2 === 0 ? '#e61938' : '#f4d58d', '#fff', 0.88);
+                    }
+                    break;
+                }
+                case 15: {
+                    // 15th Form: Six Moons Abyss — 6 hexagonal vortex nodes matching Kokushibo's 6 eyes
+                    for (let i = 0; i < 6; i++) {
+                        const a = (i * Math.PI) / 3 + t * 0.6;
+                        const nx = cx + Math.cos(a) * 58 * scale;
+                        const ny = cy + Math.sin(a) * 42 * scale;
+                        drawCurvedSlashArc(ctx, nx, ny, 22 * scale, t * 3 + i, t * 3 + i + Math.PI * 1.3, 6 * scale, i % 2 === 0 ? '#e61938' : '#f4d58d', '#fff', 0.9);
+                    }
+                    break;
+                }
+                case 16: {
+                    // 16th Form: Moonbow — Half Moon (6 colossal vertical pillars from sky to earth)
+                    for (let i = 0; i < 6; i++) {
+                        const px = w * (0.14 + i * 0.144);
+                        const pillarPulse = 0.65 + 0.35 * Math.sin(t * 4 + i * 1.1);
+                        ctx.save();
+                        const grad = ctx.createLinearGradient(px, 0, px, h);
+                        grad.addColorStop(0, 'rgba(244, 213, 141, 0.95)');
+                        grad.addColorStop(0.5, 'rgba(230, 25, 56, 0.9)');
+                        grad.addColorStop(1, 'rgba(123, 44, 191, 0.85)');
+                        ctx.fillStyle = grad;
+                        ctx.shadowColor = '#e61938';
+                        ctx.shadowBlur = 15;
+                        const barW = 8 * scale * pillarPulse * intensity;
+                        ctx.fillRect(px - barW / 2, h * 0.05, barW, h * 0.85);
+                        ctx.restore();
+                        drawCrescentMoon(ctx, px, h * 0.84, 13 * scale, Math.PI * 0.5 + Math.sin(t * 2 + i) * 0.4, '#f4d58d', '#e61938');
+                    }
+                    break;
+                }
+            }
+
+            // Signature Moon Breathing Chaotic Mini-Crescents around every technique!
+            const crescentCount = kataId >= 7 ? 14 : 9;
+            for (let c = 0; c < crescentCount; c++) {
+                const seed = c * 137.5 + kataId * 29;
+                const orbitR = ((seed % 75) + 18) * scale * (0.85 + 0.2 * pulse);
+                const angle = t * (1.2 + (c % 3) * 0.5) * (c % 2 === 0 ? 1 : -1) + seed;
+                const mx = cx + Math.cos(angle) * orbitR * 1.25;
+                const my = cy + Math.sin(angle) * orbitR * 0.85;
+                const cSize = (4.5 + (c % 4) * 2.2) * scale * intensity;
+                const isGold = c % 3 !== 0;
+                drawCrescentMoon(
+                    ctx,
+                    mx,
+                    my,
+                    cSize,
+                    angle + t * 3,
+                    isGold ? '#f4d58d' : '#e61938',
+                    isGold ? '#e61938' : '#7b2cbf'
+                );
+            }
+        }
+
+        /* =========================================================================
+           8. BUILD & FILTER THE 16 KATA ARCHIVE CARDS
+           ========================================================================= */
+        const cardCanvasMap = new Map();
+        const cardBurstMap = new Map();
+
+        function renderKataGrid() {
+            const grid = document.getElementById('kataGrid');
+            grid.innerHTML = '';
+            cardCanvasMap.clear();
+
+            const filtered = MOON_KATAS.filter((k) => {
+                const matchesCategory = currentFilter === 'all' || k.category.includes(currentFilter);
+                const q = currentSearch.trim().toLowerCase();
+                const matchesSearch = !q ||
+                    k.name.toLowerCase().includes(q) ||
+                    k.jp.toLowerCase().includes(q) ||
+                    k.roman.toLowerCase() === q ||
+                    String(k.id) === q;
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full ornate-card rounded-3xl p-12 text-center">
+                        <div class="font-jp text-4xl text-crimson-500 mb-3">月の呼吸</div>
+                        <p class="text-lg text-white font-serif">По вашему запросу каты не найдены</p>
+                        <button onclick="filterKatas('all'); document.getElementById('kataSearchInput').value='';" class="mt-4 px-5 py-2 rounded-xl bg-crimson-600 text-lunar-400 text-xs font-semibold">
+                            Показать все 16 стилей
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach((kata) => {
+                const isForm2 = kata.bladeForm === 2;
+                const card = document.createElement('article');
+                card.className = 'ornate-card tw-highlight rounded-2xl overflow-hidden flex flex-col justify-between group';
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Embedded Dynamic Visual Insert (Визуальная вставка стиля) -->
+                        <div class="relative h-44 bg-obsidian-950 border-b border-amethyst-800/80 overflow-hidden cursor-pointer" onclick="openKataModal(${kata.id})">
+                            <canvas id="kataCanvas-${kata.id}" width="340" height="190" class="w-full h-full block"></canvas>
+                            
+                            <!-- Top Badges on Visual Insert -->
+                            <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                                <span class="px-2.5 py-0.5 rounded-md bg-obsidian-950/85 border border-lunar-500/40 text-lunar-400 text-xs font-bold tracking-wider">
+                                    ${kata.roman} КАТА
+                                </span>
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase ${isForm2 ? 'bg-crimson-600/80 text-lunar-300 border border-lunar-400/50' : 'bg-amethyst-800/85 text-gray-300 border border-amethyst-500/40'}">
+                                    ${isForm2 ? 'II Форма клинка' : 'I Форма клинка'}
+                                </span>
+                            </div>
+
+                            <!-- Bottom Overlay Hint -->
+                            <div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] text-gray-300 pointer-events-none">
+                                <span class="font-jp text-lunar-400/90 drop-shadow">${kata.jp}</span>
+                                <span class="opacity-0 group-hover:opacity-100 transition-opacity text-lunar-400 font-medium">Увеличить →</span>
+                            </div>
+                        </div>
+
+                        <!-- Card Text Content -->
+                        <div class="p-5">
+                            <div class="text-[11px] uppercase tracking-wider text-crimson-400 font-semibold mb-1">
+                                ${kata.vector} • ${kata.range}
+                            </div>
+                            <h3 class="title-serif text-xl font-bold text-white group-hover:text-lunar-400 transition-colors leading-snug mb-2.5">
+                                ${kata.name}
+                            </h3>
+                            <p class="text-xs text-gray-300 leading-relaxed line-clamp-3">
+                                ${kata.desc}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Actions -->
+                    <div class="px-5 pb-5 pt-2 flex items-center gap-2">
+                        <button onclick="openKataModal(${kata.id})" class="flex-1 py-2.5 px-3 rounded-xl text-xs font-semibold bg-gradient-to-r from-crimson-700/90 to-amethyst-700/90 hover:from-crimson-600 hover:to-amethyst-600 text-lunar-400 border border-lunar-500/30 transition-all flex items-center justify-center gap-1.5">
+                            <span>▶ Воспроизвести технику</span>
+                        </button>
+                        <button onclick="pulseCardCanvas(${kata.id})" class="p-2.5 rounded-xl bg-obsidian-900 hover:bg-amethyst-800 text-lunar-400 border border-amethyst-700/60 transition-colors" title="Быстрый импульс удара на карточке">
+                            ⚡
+                        </button>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+
+                const canvasEl = card.querySelector(`#kataCanvas-${kata.id}`);
+                if (canvasEl) {
+                    cardCanvasMap.set(kata.id, canvasEl);
+                }
+            });
+        }
+
+        function pulseCardCanvas(kataId) {
+            cardBurstMap.set(kataId, 1.65);
+            playSlashSound(kataId >= 7 ? 'form2' : 'slash');
+        }
+
+        function filterKatas(category) {
+            currentFilter = category;
+            document.querySelectorAll('.kata-filter-btn').forEach((btn) => {
+                const isActive = btn.getAttribute('data-filter') === category;
+                if (isActive) {
+                    btn.className = 'kata-filter-btn active px-3.5 py-2 rounded-xl text-xs font-semibold bg-crimson-600 text-lunar-400 border border-lunar-500/50 transition-all';
+                } else {
+                    btn.className = 'kata-filter-btn px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900 text-gray-300 border border-amethyst-700/60 hover:border-lunar-500/40 transition-all';
+                }
+            });
+            renderKataGrid();
+        }
+
+        function handleKataSearch(val) {
+            currentSearch = val;
+            renderKataGrid();
+        }
+
+        /* =========================================================================
+           9. FULL-SCREEN KATA COMBAT SIMULATOR MODAL
+           ========================================================================= */
+        function openKataModal(kataId) {
+            const idx = MOON_KATAS.findIndex(k => k.id === kataId);
+            if (idx === -1) return;
+            activeModalKataIndex = idx;
+            updateModalContent();
+
+            const modal = document.getElementById('kataSimulatorModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            resizeModalCanvas();
+            replayModalKataStrike();
+        }
+
+        function closeKataModal() {
+            const modal = document.getElementById('kataSimulatorModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function navigateModalKata(dir) {
+            activeModalKataIndex = (activeModalKataIndex + dir + MOON_KATAS.length) % MOON_KATAS.length;
+            updateModalContent();
+            replayModalKataStrike();
+        }
+
+        function replayModalKataStrike() {
+            modalBurstProgress = 1.65;
+            const kata = MOON_KATAS[activeModalKataIndex];
+            playSlashSound(kata && kata.bladeForm === 2 ? 'form2' : 'slash');
+        }
+
+        function toggleModalSlowMo() {
+            modalSlowMo = modalSlowMo === 1.0 ? 0.25 : 1.0;
+            const btn = document.getElementById('slowMoBtn');
+            if (modalSlowMo < 1.0) {
+                btn.textContent = 'Прозрачный Мир: 0.25x (Активен)';
+                btn.className = 'px-3.5 py-2 rounded-xl text-xs font-semibold bg-crimson-600/80 text-lunar-400 border border-lunar-500 transition-all';
+            } else {
+                btn.textContent = 'Прозрачный Мир: 1.0x';
+                btn.className = 'px-3.5 py-2 rounded-xl text-xs font-medium bg-obsidian-900/90 hover:bg-amethyst-800 text-gray-200 border border-amethyst-500/50 transition-all';
+            }
+        }
+
+        function updateModalContent() {
+            const kata = MOON_KATAS[activeModalKataIndex];
+            if (!kata) return;
+
+            document.getElementById('modalKataNumber').textContent = `${kata.roman} КАТА`;
+            document.getElementById('modalKataJp').textContent = `${kata.jp} (${kata.romaji})`;
+            document.getElementById('modalBladeRequirement').textContent =
+                `${kata.bladeForm === 2 ? 'II Форма Клинка (Пробужденный Кёкокукамусари)' : 'I Форма Клинка (Классическая катана)'} • ${kata.vector}`;
+            document.getElementById('modalKataTitle').textContent = kata.name;
+            document.getElementById('modalKataDescription').textContent = kata.desc;
+            document.getElementById('modalTrajectoryNote').textContent = kata.trajectoryNote;
+            document.getElementById('modalSpecRange').textContent = kata.range;
+            document.getElementById('modalSpecVector').textContent = kata.vector;
+            document.getElementById('modalSpecDensity').textContent = kata.density;
+            document.getElementById('modalKataCounter').textContent = `${kata.id} / ${MOON_KATAS.length}`;
+        }
+
+        function resizeModalCanvas() {
+            const canvas = document.getElementById('modalSimulatorCanvas');
+            if (!canvas || !canvas.parentElement) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+        }
+
+        /* =========================================================================
+           10. MASTER ANIMATION LOOP (AMBIENT + ARMORY + 16 KATA CANVASES + MODAL)
+           ========================================================================= */
+        const ambientMoons = [];
+
+        function initAmbientMoons() {
+            const canvas = document.getElementById('ambientMoonCanvas');
+            if (!canvas) return;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            ambientMoons.length = 0;
+            const count = Math.min(28, Math.floor(window.innerWidth / 55));
+            for (let i = 0; i < count; i++) {
+                ambientMoons.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: 4 + Math.random() * 9,
+                    vx: (Math.random() - 0.5) * 0.45,
+                    vy: -0.25 - Math.random() * 0.55,
+                    rot: Math.random() * Math.PI * 2,
+                    vRot: (Math.random() - 0.5) * 0.02,
+                    gold: Math.random() > 0.38,
+                    alpha: 0.2 + Math.random() * 0.45
+                });
+            }
+
+            // Initialize Armory ambient crescents
+            const armoryCanvas = document.getElementById('bladeEffectCanvas');
+            if (armoryCanvas && armoryCanvas.parentElement) {
+                const r = armoryCanvas.parentElement.getBoundingClientRect();
+                armoryCanvas.width = r.width || 900;
+                armoryCanvas.height = r.height || 420;
+            }
+
+            bladeAmbientCrescents.length = 0;
+            for (let i = 0; i < 24; i++) {
+                bladeAmbientCrescents.push({
+                    angle: Math.random() * Math.PI * 2,
+                    dist: 40 + Math.random() * 160,
+                    speed: (0.008 + Math.random() * 0.015) * (i % 2 === 0 ? 1 : -1),
+                    size: 4 + Math.random() * 7,
+                    gold: i % 2 === 0
+                });
+            }
+        }
+
+        let simClock = 0;
+        let lastFrameTime = performance.now();
+
+        function animateMasterLoop(now) {
+            const dt = Math.min(50, now - lastFrameTime);
+            lastFrameTime = now;
+            simClock += dt * modalSlowMo;
+
+            // 1. Render Ambient Background Floating Crescent Moons
+            const ambCanvas = document.getElementById('ambientMoonCanvas');
+            if (ambCanvas) {
+                const actx = ambCanvas.getContext('2d');
+                actx.clearRect(0, 0, ambCanvas.width, ambCanvas.height);
+
+                ambientMoons.forEach((m) => {
+                    m.x += m.vx;
+                    m.y += m.vy;
+                    m.rot += m.vRot;
+
+                    if (m.y < -20) m.y = ambCanvas.height + 20;
+                    if (m.x < -20) m.x = ambCanvas.width + 20;
+                    if (m.x > ambCanvas.width + 20) m.x = -20;
+
+                    actx.save();
+                    actx.globalAlpha = m.alpha;
+                    drawCrescentMoon(
+                        actx,
+                        m.x,
+                        m.y,
+                        m.size,
+                        m.rot,
+                        m.gold ? '#f4d58d' : '#e61938',
+                        m.gold ? '#e61938' : '#7b2cbf'
+                    );
+                    actx.restore();
+                });
+            }
+
+            // 2. Render Armory Blade Effects (2nd Form Swirling Crescents & Slash Bursts)
+            const bladeCanvas = document.getElementById('bladeEffectCanvas');
+            if (bladeCanvas) {
+                const bctx = bladeCanvas.getContext('2d');
+                const bw = bladeCanvas.width;
+                const bh = bladeCanvas.height;
+                bctx.clearRect(0, 0, bw, bh);
+
+                // If Form II is active, render continuous swirling chaotic crescents around the blade
+                const activeCount = isBladeFormTwo ? bladeAmbientCrescents.length : 8;
+                for (let i = 0; i < activeCount; i++) {
+                    const c = bladeAmbientCrescents[i];
+                    c.angle += c.speed * (isBladeFormTwo ? 1.8 : 0.7);
+                    const cx = bw * 0.54 + Math.cos(c.angle) * c.dist * 1.9;
+                    const cy = bh * 0.44 + Math.sin(c.angle) * c.dist * 0.55;
+                    bctx.save();
+                    bctx.globalAlpha = isBladeFormTwo ? 0.75 : 0.3;
+                    drawCrescentMoon(
+                        bctx,
+                        cx,
+                        cy,
+                        c.size * (isBladeFormTwo ? 1.35 : 0.85),
+                        c.angle * 2,
+                        c.gold ? '#f4d58d' : '#e61938',
+                        '#e61938'
+                    );
+                    bctx.restore();
+                }
+
+                // Render active slash test particles
+                for (let i = bladeSlashParticles.length - 1; i >= 0; i--) {
+                    const p = bladeSlashParticles[i];
+                    p.life -= p.decay;
+                    if (p.life <= 0) {
+                        bladeSlashParticles.splice(i, 1);
+                        continue;
+                    }
+
+                    if (p.type === 'arc') {
+                        drawCurvedSlashArc(
+                            bctx,
+                            p.x,
+                            p.y,
+                            p.radius,
+                            p.angle - 0.9,
+                            p.angle + 0.9,
+                            18 * p.life,
+                            p.color,
+                            '#ffffff',
+                            p.life
+                        );
+                    } else {
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        p.rot += p.vRot;
+                        bctx.save();
+                        bctx.globalAlpha = p.life;
+                        drawCrescentMoon(
+                            bctx,
+                            p.x,
+                            p.y,
+                            p.size,
+                            p.rot,
+                            p.gold ? '#f4d58d' : '#e61938',
+                            '#e61938'
+                        );
+                        bctx.restore();
+                    }
+                }
+            }
+
+            // 3. Render All Visible Kata Archive Card Visual Inserts
+            cardCanvasMap.forEach((canvasEl, kataId) => {
+                const ctx = canvasEl.getContext('2d');
+                let burst = cardBurstMap.get(kataId) || 1.0;
+                if (burst > 1.0) {
+                    burst = Math.max(1.0, burst - 0.02);
+                    cardBurstMap.set(kataId, burst);
+                }
+                renderKataTrajectory(ctx, canvasEl.width, canvasEl.height, kataId, now, burst);
+            });
+
+            // 4. Render Full-Screen Modal Simulator Canvas if open
+            const modalEl = document.getElementById('kataSimulatorModal');
+            if (modalEl && !modalEl.classList.contains('hidden')) {
+                const mCanvas = document.getElementById('modalSimulatorCanvas');
+                if (mCanvas) {
+                    const mctx = mCanvas.getContext('2d');
+                    if (modalBurstProgress > 1.0) {
+                        modalBurstProgress = Math.max(1.0, modalBurstProgress - 0.015);
+                    }
+                    const kata = MOON_KATAS[activeModalKataIndex];
+                    if (kata) {
+                        renderKataTrajectory(mctx, mCanvas.width, mCanvas.height, kata.id, simClock, modalBurstProgress);
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateMasterLoop);
+        }
+
+        // Window Resize & Initialization
+        window.addEventListener('resize', () => {
+            initAmbientMoons();
+            resizeModalCanvas();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('kataSimulatorModal');
+            if (modal && !modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeKataModal();
+                if (e.key === 'ArrowRight') navigateModalKata(1);
+                if (e.key === 'ArrowLeft') navigateModalKata(-1);
+            }
+        });
+
+        window.onload = function () {
+            setupEyeTracking();
+            renderKataGrid();
+            initAmbientMoons();
+            requestAnimationFrame(animateMasterLoop);
+        };
+    </script>
+</body>
+</html>
